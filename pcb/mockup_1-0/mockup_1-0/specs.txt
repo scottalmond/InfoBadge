@@ -1,0 +1,19 @@
+pcb
+0.063" thick (1.6 mm)
+0.125" radius on pcb
+3.375" x 2.125" outer dims
+<0.18" thick lanyard cord --> @1.15", 2.125-.3-.15
+0.31" diam hole for lanyard
+
+battery
+0.135" thick
+0.8" diameter
+0.25" leads
+
+screen
+.0465" thick
+1.25" x 1.44"
+0.5" wide cord centered on short side
+200 x 200 px, 1.54" diag
+about 7 words across, 17 words down (including button labels)
+

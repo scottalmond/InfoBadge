@@ -1,0 +1,123 @@
+info badge
+
+@qty 25
+SAMD21E 256KB Flash 32pin 7x7, $2.70, ATSAMD21E18A-AUTDKR-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAMD21E18A-AUT/ATSAMD21E18A-AUTDKR-ND/4878895
+SAMD21G 256KB Flash 64pin 10x10, $2.99, ATSAMD21J18A-AUTCT-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAMD21J18A-AUT/ATSAMD21J18A-AUTCT-ND/4878875
+SAML21E 256KB Flash 32pin 7x7, $4.06, ATSAML21E18B-AUTCT-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21E18B-AUT/ATSAML21E18B-AUTCT-ND/5702302
+SAML21E 256KB Flash 32pin 5x5, $3.98, ATSAML21E18B-MUTCT-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21E18B-MUT/ATSAML21E18B-MUTCT-ND/5702303
+
+
+32 pins --> 25 i/o
+48 pins --> 37 i/o
+64 pins --> 50 i/o
+
+https://www.digikey.com/product-detail/en/microchip-technology/ATSAML22J17A-AUT/ATSAML22J17A-AUTCT-ND/5799498
+
+  cap touch [11 pins]
+reverse mount RGB led [3 pins], $0.95 https://www.digikey.com/product-detail/en/sunled/XZMDKCBDDG45S-9/1497-1257-1-ND/5169746
+3.3V regulator $0.39 https://www.digikey.com/product-detail/en/microchip-technology/MCP1810T-33I-J8A/MCP1810T-33I-J8ADKR-ND/6235186
+battery charger [1 pin charged]
+  6uA quiescent current, 3V UVLO, $1.93
+  https://www.digikey.com/product-detail/en/texas-instruments/BQ24074RGTR/296-38873-1-ND/5142985
+UVP? https://www.digikey.com/product-detail/en/texas-instruments/BQ29700DSER/296-43985-6-ND/5973221
+  if so, use lower cost battery charger?
+micro usb port/usb-c [1 pin plugged in, 3 data]
+[speaker/buzzer] [1 pin I2S/PWM]
+# audio jack [2 pins L/R analog] https://www.digikey.com/product-detail/en/cui-devices/SJ-43514-SMT-TR/CP-43514SJCT-ND/669734
+  70 mA at 1.8V is 1/8 Watt --> 30 minute battery, there just isn't enough power to sustain an audio connection for a reasonable time period - focus on info only, no maintained services
+lipo dime cell, LIR2032, 4.2V max
+accel/[magn] [2 i2c, 1 interrupt]
+*  0.38 uA (1 uA @ 12 ODR), 1.8V 1.6Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/IIS2DLPCTR/497-18226-1-ND/9648689
+  3.7 uA 1 Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/LSM303AGRTR/497-16527-1-ND/6006105
+  2 uA at 1 Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/LIS3DHTR/497-10613-1-ND/2334355
+ePaper header [6 i/o] 
+ePaper screen $7.52
+  https://www.waveshare.com/product/1.54inch-e-Paper-Module.htm
+caps
+resistors
+[SOA header] [2 i/o]
+memory [X] 0.3 Mb/minute (5 kB/sec aka 40) mp3 https://github.com/adafruit/Adafruit_MP3 --> 32 MB >60 minutes (or run on USB power)
+  32 MB $3.44, 1.8V 2uA sleep, https://www.digikey.com/product-detail/en/micron-technology-inc/MT25QU256ABA1EW9-0SIT-TR/557-1825-6-ND/9674011
+  4 GB $7.76, 3.3V https://www.digikey.com/product-detail/en/micron-technology-inc/MT29F32G08CBADBWP-12IT-D-TR/557-1865-1-ND/9673846
+  256 MB $3.00, 3.3V https://www.digikey.com/product-detail/en/micron-technology-inc/MT29F2G08ABAGAWP-IT-G-TR/557-1668-1-ND/6207207
+  128 MB para $2.46, 3.3V https://www.digikey.com/product-detail/en/micron-technology-inc/MT29F1G08ABAEAWP-IT-E-TR/557-1658-1-ND/6207198
+  128 MB SPI $2.28, 3.3V 10uA sleep https://www.digikey.com/product-detail/en/winbond-electronics/W25N01GVZEIG-TR/W25N01GVZEIGCT-ND/7393545
+  128 MB SPI $2.93, 1.8V 90uA sleep https://www.digikey.com/product-detail/en/gigadevice-semiconductor-hk-limited/GD5F1GQ4RF9IGR/1970-1080-1-ND/9484829
+  64 MB SPI $4.69, 3.3V 5uA sleep https://www.digikey.com/product-detail/en/micron-technology-inc/MT25QL512ABB8ESF-0SIT/557-1651-ND/6036286
+  32 MB 3.3V $1.05/tray 2uA sleep, 10 mA read at 5 MHz https://www.digikey.com/product-detail/en/cypress-semiconductor-corp/S25FL256LDPNFI010/2015-S25FL256LDPNFI010-ND/9955092
+  32 MB 3.3V $1.43 70uA standby https://www.digikey.com/product-detail/en/cypress-semiconductor-corp/S25FL256SDSMFV013/2015-S25FL256SDSMFV013CT-ND/9954617
+  32 MB 1.8V $3.05 2uA sleep, 8 mA read https://www.digikey.com/product-detail/en/micron-technology-inc/MT25QU256ABA1EW9-0SIT-TR/557-1825-6-ND/9674011
+  8 MB 3.3V $1.09 hackaday 2018 5uA sleep, 12mA read https://www.digikey.com/product-detail/en/adesto-technologies/AT25DF081A-SSH-T/1265-1166-1-ND/5168672
+
+reset button
+fm radio
+
+current comsumption
+RTC + EIC
+interrupt on USB plug-in, accelerometer event + [touch]
+
+SPI to screen, I2C to accel/magn, SAO [I2C], USB
+analog read brightness
+I2S audio https://www.digikey.com/product-detail/en/cui-devices/CMS-18138A-SP/102-4339-ND/7404547?utm_campaign=buynow&utm_medium=aggregator&WT.z_cid=ref_findchips_standard&utm_source=findchips
+
+perhaps 2x LDO, needs shutdown pin [1 pin]
+samdD max around 7 mA (?), but screen draws 8 mA for 2 sec
+min voltage for epaper refresh?
+max charge 1C, max discharge 2C
+90 mA*3.3V = 300 mW
+
+eInk displays
+2 different vendors with very similar schematics, note digikey is 154 x 154 px, NOT 200 x 200 px
+https://www.waveshare.com/w/upload/5/5b/1.54inch_e-Paper_Schematic.pdf
+https://www.pervasivedisplays.com/wp-content/uploads/2019/06/1P200-00_01_E2154CS091_24PINFPC_20180807-1.pdf
+https://www.waveshare.com/wiki/1.54inch_e-Paper_Module
+https://www.digikey.com/product-detail/en/pervasive-displays/E2154CS091/E2154CS091-ND/9636013
+
+--
+
+consider aggressive low power strategies
+STM32L412xx
+  <1 uA modes
+  https://www.digikey.com/product-detail/en/stmicroelectronics/STM32L412KBU6/497-18230-ND/9656220
+  RTC
+  128KB flash
+  $3.17
+
+SAML21 0.9uA with RTC and SRAM
+  https://www.arrow.com/en/research-and-events/articles/atmel-the-worlds-lowest-power-cortex-m0-microcontroller
+  $3.05 128 KB, 48 pins / 37 I/O, 1.7-3.6 V
+  https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21G17B-AUT/ATSAML21G17B-AUTCT-ND/5702306
+  Arduino IDE https://www.youtube.com/watch?v=sB4lZ2zG5V8
+  wake on touch
+
+note: lipo discharge at 5%/month (54% by end of year)
+  Need 365*24 hours, 8,760 hours, with 45,000 uAh lipo cell --> 5.1 uA static draw
+  1 uA for accel, 12.5 ODR
+  alt accel (iffy data sheet) https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMA400-DS000.pdf
+
+6 mA for 2 sec vs 5 uA for 24 hours --> 12 mAs vs 432 mAs
+36 screen refreshes is one day off of lifetime
+
+consider omitting external memory to conserve power/realistate/complexity
+
+TPS783xx LDO 0.5uA Iq
+  http://www.ti.com/lit/ds/symlink/tps783.pdf
+  Iq def'n: http://www.ti.com/lit/an/slyt412/slyt412.pdf
+
+1.8 V $0.39
+  https://www.digikey.com/product-detail/en/microchip-technology/MCP1810T-18I-J8A/MCP1810T-18I-J8ACT-ND/6235176
+
+3.3V output, 50 nA Iq $0.39 [use enable line to set to 1 nA when NOT doing screen refresh]
+  https://www.digikey.com/product-detail/en/microchip-technology/MCP1810T-18I-J8A/MCP1810T-18I-J8ACT-ND/6235176
+
+BGA $3.97 0.7uA Iq
+  https://www.digikey.com/product-detail/en/texas-instruments/BQ25121AYFPT/296-49478-1-ND/9360696
+
+$7.80
+  https://www.digikey.com/product-detail/en/maxim-integrated/MAX20303BEWN-T/MAX20303BEWN-TCT-ND/9991734
+  appears to suck in everything, including small uProcessor
+
+*$2.98 includes LDO 1.8V + reconfigurable LDO BQ25150
+  https://www.digikey.com/product-detail/en/texas-instruments/BQ25150YFPT/296-53418-1-ND/9953063
+  layout info: http://www.ti.com/lit/ml/mxbg090k/mxbg090k.pdf
+    $102.80 EVM: https://www.digikey.com/products/en?mpart=BQ25150EVM&v=296
