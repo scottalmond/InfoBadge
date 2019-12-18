@@ -5,6 +5,8 @@ SAMD21E 256KB Flash 32pin 7x7, $2.70, ATSAMD21E18A-AUTDKR-ND, https://www.digike
 SAMD21G 256KB Flash 64pin 10x10, $2.99, ATSAMD21J18A-AUTCT-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAMD21J18A-AUT/ATSAMD21J18A-AUTCT-ND/4878875
 SAML21E 256KB Flash 32pin 7x7, $4.06, ATSAML21E18B-AUTCT-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21E18B-AUT/ATSAML21E18B-AUTCT-ND/5702302
 SAML21E 256KB Flash 32pin 5x5, $3.98, ATSAML21E18B-MUTCT-ND, https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21E18B-MUT/ATSAML21E18B-MUTCT-ND/5702303
+SAM21LG 256KB 7x7 $4.18@25 https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21G18B-AUT/ATSAML21G18B-AUTCT-ND/5702308
+  0.9 uA with RTC
 
 
 32 pins --> 25 i/o
@@ -26,10 +28,10 @@ micro usb port/usb-c [1 pin plugged in, 3 data]
 # audio jack [2 pins L/R analog] https://www.digikey.com/product-detail/en/cui-devices/SJ-43514-SMT-TR/CP-43514SJCT-ND/669734
   70 mA at 1.8V is 1/8 Watt --> 30 minute battery, there just isn't enough power to sustain an audio connection for a reasonable time period - focus on info only, no maintained services
 lipo dime cell, LIR2032, 4.2V max
-accel/[magn] [2 i2c, 1 interrupt]
-*  0.38 uA (1 uA @ 12 ODR), 1.8V 1.6Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/IIS2DLPCTR/497-18226-1-ND/9648689
-  3.7 uA 1 Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/LSM303AGRTR/497-16527-1-ND/6006105
-  2 uA at 1 Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/LIS3DHTR/497-10613-1-ND/2334355
+accel/[magn] [2 i2c, 1 interrupt] IIS2DLPC
+* $2.48@25 0.38 uA (1 uA @ 12 ODR), 1.8V 1.6Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/IIS2DLPCTR/497-18226-1-ND/9648689
+  $2.48@25 3.7 uA 1 Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/LSM303AGRTR/497-16527-1-ND/6006105
+  $1.39@25 2 uA at 1 Hz, https://www.digikey.com/product-detail/en/stmicroelectronics/LIS3DHTR/497-10613-1-ND/2334355
 ePaper header [6 i/o] 
 ePaper screen $7.52
   https://www.waveshare.com/product/1.54inch-e-Paper-Module.htm
@@ -83,7 +85,7 @@ STM32L412xx
   128KB flash
   $3.17
 
-SAML21 0.9uA with RTC and SRAM
+SAML21 0.9uA with RTC and SRAM [rtc, usb
   https://www.arrow.com/en/research-and-events/articles/atmel-the-worlds-lowest-power-cortex-m0-microcontroller
   $3.05 128 KB, 48 pins / 37 I/O, 1.7-3.6 V
   https://www.digikey.com/product-detail/en/microchip-technology/ATSAML21G17B-AUT/ATSAML21G17B-AUTCT-ND/5702306
@@ -121,3 +123,60 @@ $7.80
   https://www.digikey.com/product-detail/en/texas-instruments/BQ25150YFPT/296-53418-1-ND/9953063
   layout info: http://www.ti.com/lit/ml/mxbg090k/mxbg090k.pdf
     $102.80 EVM: https://www.digikey.com/products/en?mpart=BQ25150EVM&v=296
+
+$2.81  BQ25155YFPT
+  https://www.digikey.com/product-detail/en/texas-instruments/BQ25155YFPT/296-BQ25155YFPTCT-ND/10435202
+
+consider BQ25120 to gain access to LSCTRL switch (tie to accel)
+
+
+-- 12/17/19
+
+wavShare uses TXS0108EPWR, 1.41 @qty25
+use 2 3.3V logic for blue/green LED.  use 1 1.8V logic for red LED
+  https://www.digikey.com/product-detail/en/sunled/XZMDKCBDDG45S-9/1497-1257-1-ND/5169746
+VCC: PWR -> ePaper and uProcessor
+GND: PWR -> ePaper and uProcessor
+DIN: uProcessor -> ePaper SPI MOSI
+CLK: uProcessor -> ePaper
+CS: uProcessor -> ePaper [active low]
+DC: uProcessor -> ePaper
+RST: uProcessor -> ePaper
+BUSY: ePaper -> uProcessor
+
+case ideas:
+angled aluminum and rubber [aqua blue, silver, black] https://ae01.alicdn.com/kf/HTB1el7vf5CYBuNkHFCcq6AHtVXax/ZEEKER-New-RFID-Men-Credit-Card-Wallet-Cool-Slim-Metal-Business-Card-Case.jpg_q50.jpg
+wavy shape https://ae01.alicdn.com/kf/HTB1OTZqqy0TMKJjSZFNq6y_1FXaB/Klsyanyo-2pcs-lot-Adhesive-Sticker-Back-Cover-Card-Holder-Small-Bus-Card-Case-Pouch-for-Cell.jpg
+wood https://i.pinimg.com/originals/5f/f8/35/5ff835c523804908eea467963bbf4e1e.jpg
+rotate hinge https://i.pinimg.com/originals/5a/10/9d/5a109d277b5315a1e9f0f787501fe2d5.jpg
+use string and joining agent and lanyard, also black back with blue front metal https://cdn.shopify.com/s/files/1/1066/9566/products/blue_grande.jpg?v=1556835254
+logo on rubber https://cdn.improb.com/wp-content/uploads/2018/02/ROCO-Minimalist-Aluminum-Slim-Wallet.png
+screw stack https://rebatekey.com/files/images/a/c/a/c/6/acac6.jpg
+diffration grating finish https://cdn.shopify.com/s/files/1/0028/4832/5747/products/1_16f1b87d-8dc9-4522-b8f8-f8bd9730f319_2048x.jpg?v=1566602540
+rubber cross-hatch, rubber as accent https://everydaycarry.com/posts/32988/dango-blue-line-tactical-wallets
+screws get loose https://www.youtube.com/watch?v=q2d4OfrIvpQ
+overlapping different shapes of aluminum https://cdn.thecoolist.com/wp-content/uploads/2017/01/A3-Aluminum-Wallet-e1485126466168.jpg
+wood in aluminum https://ksr-ugc.imgix.net/assets/025/168/251/883e2a6595028808a3a010fe4a646839_original.jpg?ixlib=rb-2.1.0&w=680&fit=max&v=1558050943&auto=format&gif-q=50&q=92&s=dc82a6fae4eee4281b5e896e7b001178
+  https://store.fantomwallet.com/build-your-fantom-r-wallet/
+  carbon fiber https://cdn11.bigcommerce.com/s-l83a5g4cge/images/stencil/2048x2048/attribute_rule_images/576_source_1573259302.jpg
+
+low power magn $2.60 IIS2MDC
+  https://www.digikey.com/product-detail/en/stmicroelectronics/IIS2MDCTR/497-17728-1-ND/7927710
+  25 uA at 10 Hz
+  3.85 uA at 1 Hz: [25-1.5]/[10/1 Hz ODR]+1.5
+
+hall effect $0.55 at qty25
+  https://www.digikey.com/product-detail/en/silicon-labs/SI7210-B-04-IV/336-4056-ND/7323035
+  0.4 uA at 5 Hz
+
+magnetoressitaive $1.65 XYZ  LIS2MDLTR
+  https://www.digikey.com/product-detail/en/stmicroelectronics/LIS2MDLTR/497-17588-1-ND/7565512
+  why so much cheaper?
+
+ePaper header (best guess) $1.76@25
+  https://www.digikey.com/product-detail/en/omron-electronics-inc-emc-div/XF2M-2415-1A/OR721DKR-ND/1859165
+
+use led as light sensor
+  https://wiki.analog.com/university/courses/electronics/electronics-lab-led-sensor
+  https://www.sparkfun.com/news/2161
+  would probably be better off using capacitive pads as near field tx/rx
