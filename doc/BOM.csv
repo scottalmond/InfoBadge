@@ -180,3 +180,32 @@ use led as light sensor
   https://wiki.analog.com/university/courses/electronics/electronics-lab-led-sensor
   https://www.sparkfun.com/news/2161
   would probably be better off using capacitive pads as near field tx/rx
+
+-- 1/6/19
+
+zero-peak is single-ended
+lowest cost peak-peaker buzzer is:
+https://www.digikey.com/product-detail/en/cui-devices/CPT-1203-78-SMT-TR/102-CPT-1203-78-SMT-CT-ND/10326273
+$1.10@25
+
+resonance at 2.7khz
+https://www.digikey.com/product-detail/en/pui-audio-inc/SMT-0927-S-13-R/668-1623-1-ND/8979478
+$1.83@25
+
+magnetic ball bearing 3/64"
+https://www.mcmaster.com/9529K58
+two ball bearings in same chamber ensure no rotation, $0.05@100
+
+cylinder magnet 60 mil diameter $0.64@25
+https://www.mcmaster.com/standard-magnets
+
+- 1/16/20
+
+PyGamer
+GD25Q64
+https://cdn-learn.adafruit.com/assets/assets/000/076/005/original/adafruit_products_PyGamer_Sch_p1.png?1558716704
+https://www.digikey.com/product-detail/en/gigadevice-semiconductor-hk-limited/GD25Q64CSIGR/1970-1026-1-ND/9484776
+$1.04@25
+3.3V
+(quad SPI)
+13 mA@80 MHz
