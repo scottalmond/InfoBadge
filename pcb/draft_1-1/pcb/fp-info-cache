@@ -1,4 +1,25 @@
-16937896547907390
+16944265521690181
+10118194-0001LF
+AMPHENOL_10118194-0001LF
+
+
+0
+11
+11
+BQ25155
+BGA20C40P4X5_162X202X50
+YFP0020-1
+Integrated Circuit
+0
+20
+20
+BQ25155
+NE555DR
+D (R-PDSO-G8)
+Integrated Circuit
+0
+8
+8
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2211,6 +2232,13 @@ SMD 8540
 0
 4
 4
+CMS-18138A-SP
+CUI_CMS-18138A-SP
+
+
+0
+2
+2
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -68662,6 +68690,20 @@ rotary encoder
 0
 5
 4
+SP-1511S-6
+SP-1511S-6
+
+
+0
+2
+2
+SP-1511S-6
+SP-1511S-6_ALT
+
+
+0
+2
+2
 Sensor
 Aosong_DHT11_5.5x12.0_P2.54mm
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/DHT11.pdf
@@ -70055,6 +70097,20 @@ Logo WEEE
 0
 0
 0
+TL3315NF100Q
+TL3315NF100Q
+
+
+0
+4
+4
+TPD4S012DRYR
+SON50P100X145X60-6N
+
+
+0
+6
+6
 TerminalBlock
 TerminalBlock_Altech_AK300-2_P5.00mm
 Altech AK300 terminal block, pitch 5.0mm, 45 degree angled, see http://www.mouser.com/ds/2/16/PCBMETRC-24178.pdf
@@ -74486,6 +74542,13 @@ transformer flyback
 0
 10
 10
+USB4110-GF-A
+GCT_USB4110-GF-A
+
+
+0
+16
+16
 Valve
 Valve_ECC-83-1
 Valve ECC-83-1 round pins
@@ -75253,6 +75316,34 @@ Varistor
 RV_Disc_D21.5mm_W11.4mm_P10mm
 Varistor, diameter 21.5mm, width 11.4mm, pitch 10mm
 varistor SIOV
+0
+2
+2
+XF2M-2415-1A
+OMRON_XF2M-2415-1A
+
+
+0
+26
+26
+XZMDKCBDDG45S-9
+PLCC-4
+
+
+0
+4
+4
+custom
+eInk_waveshare_1.54A
+
+
+0
+0
+0
+lir2032
+LIR2032
+
+
 0
 2
 2

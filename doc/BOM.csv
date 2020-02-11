@@ -60,7 +60,7 @@ interrupt on USB plug-in, accelerometer event + [touch]
 
 SPI to screen, I2C to accel/magn, SAO [I2C], USB
 analog read brightness
-I2S audio https://www.digikey.com/product-detail/en/cui-devices/CMS-18138A-SP/102-4339-ND/7404547?utm_campaign=buynow&utm_medium=aggregator&WT.z_cid=ref_findchips_standard&utm_source=findchips
+I2S audio https://www.digikey.com/product-detail/en/cui-devices/CMS-18138A-SP/102-4339-ND/7404547?utm_campaign=buynow&=aggregator&WT.z_cid=ref_findchips_standard&utm_source=findchips
 
 perhaps 2x LDO, needs shutdown pin [1 pin]
 samdD max around 7 mA (?), but screen draws 8 mA for 2 sec
@@ -188,7 +188,7 @@ lowest cost peak-peaker buzzer is:
 https://www.digikey.com/product-detail/en/cui-devices/CPT-1203-78-SMT-TR/102-CPT-1203-78-SMT-CT-ND/10326273
 $1.10@25
 
-resonance at 2.7khz
+resonance at 2.7khz speaker buzzer
 https://www.digikey.com/product-detail/en/pui-audio-inc/SMT-0927-S-13-R/668-1623-1-ND/8979478
 $1.83@25
 
@@ -209,3 +209,47 @@ $1.04@25
 3.3V
 (quad SPI)
 13 mA@80 MHz
+
+-- 2/8/20
+
+Schottkey diodes
+TVS diodes
+$0.59@25
+https://www.digikey.com/product-detail/en/texas-instruments/TPD4S012DRYR/296-24244-1-ND/2037535
+
+microUSB (ref Pendant, but out of stock)
+$0.37@25
+https://www.digikey.com/product-detail/en/amphenol-icc-fci/10118194-0001LF/609-4618-1-ND/2785382
+
+(1V8 8MB memory https://www.digikey.com/product-detail/en/adesto-technologies/AT25SL641-MHE-T/1265-1282-1-ND/6827530
+
+(3V3 https://www.digikey.com/product-detail/en/adesto-technologies/AT25SF641-MHB-T/1265-1339-1-ND/9449488
+
+SOIC $0.97@25 AT25QF641-SUB-T 
+https://www.digikey.com/product-detail/en/adesto-technologies/AT25QF641-SUB-T/1265-1337-1-ND/9449486
+
+8 ohm, 1 Watt, 2018 Hackaday speaker $2.18@25
+https://www.digikey.com/product-detail/en/cui-devices/CMS-18138A-SP/102-4339-ND/7404547
+https://hackaday.io/project/161859-2018-hackaday-superconference-badge
+
+32 ohms $1.83@25
+https://www.digikey.com/product-detail/en/pui-audio-inc/SMT-0927-S-13-R/668-1623-1-ND/8979478
+
+Table 46-11
+max IO low @3V3, DRVSTR=1, 12 mA
+high 10 mA
+
+audio amp, 1 Watt, $1.20@10
+https://www.digikey.com/product-detail/en/texas-instruments/LM4890MX-NOPB/296-47333-1-ND/7688343
+
+0.07 A * 3.3V = 230 mW
+
+speaker $1.37@25
+SP-1511S-6
+85 dB at 200 mW
+https://www.digikey.com/product-detail/en/soberton-inc/SP-1511S-6/433-1211-ND/8600808
+
+reset button
+$0.13@25
+https://www.digikey.com/product-detail/en/e-switch/TL3315NF100Q/EG4620CT-ND/1870400
+

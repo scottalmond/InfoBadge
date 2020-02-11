@@ -13,19 +13,570 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 5400 5550 0    50   ~ 0
+battery\nbuzzer\nled\nePaper (1.8V?)\nFlash memory\ncapacitive touch\nPMIC/LDO\naccel\n(magn)\nusb\n(solar)\nreset button\npogo: SWD@1.8V [VDDIO, SWCLK, SWDIO, nRESET,GND]\nfiducials\nexternal crystal (precison boost?)
+Text Notes 6850 6250 0    50   ~ 0
+Markings:\nwiress/cross Wireless Incapable\nwrench/cross No user service parts inside
+Text GLabel 8550 5550 0    50   Input ~ 0
+SWDIO
+Text GLabel 8550 5450 0    50   Input ~ 0
+SWCLK
+Text GLabel 8550 5750 0    50   Input ~ 0
+~RESET
+Text GLabel 9200 2300 0    50   Input ~ 0
+VREF
 $Comp
-L MCU_Microchip_SAML:ATSAML21G18B-AUT U1
-U 1 1 5E13D4FB
-P 9450 3650
-F 0 "U1" H 9450 1661 50  0000 C CNN
-F 1 "ATSAML21G18B-AUT" H 9450 1570 50  0000 C CNN
-F 2 "Package_QFP:TQFP-48_7x7mm_P0.5mm" H 10600 5450 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001477A.pdf" H 9450 3650 50  0001 C CNN
-	1    9450 3650
+L Connector:TestPoint TP1
+U 1 1 5E3F6BD0
+P 10650 800
+F 0 "TP1" V 10604 988 50  0000 L CNN
+F 1 "VREF" V 10695 988 50  0000 L CNN
+F 2 "" H 10850 800 50  0001 C CNN
+F 3 "~" H 10850 800 50  0001 C CNN
+	1    10650 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 5E3F7589
+P 10650 1600
+F 0 "TP5" V 10604 1788 50  0000 L CNN
+F 1 "GND" V 10695 1788 50  0000 L CNN
+F 2 "" H 10850 1600 50  0001 C CNN
+F 3 "~" H 10850 1600 50  0001 C CNN
+	1    10650 1600
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5E3F7850
+P 10650 1000
+F 0 "TP2" V 10604 1188 50  0000 L CNN
+F 1 "SWDIO" V 10695 1188 50  0000 L CNN
+F 2 "" H 10850 1000 50  0001 C CNN
+F 3 "~" H 10850 1000 50  0001 C CNN
+	1    10650 1000
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5E3F7A55
+P 10650 1200
+F 0 "TP3" V 10604 1388 50  0000 L CNN
+F 1 "SWCLK" V 10695 1388 50  0000 L CNN
+F 2 "" H 10850 1200 50  0001 C CNN
+F 3 "~" H 10850 1200 50  0001 C CNN
+	1    10650 1200
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5E3F7CC8
+P 10650 1400
+F 0 "TP4" V 10598 1588 50  0000 L CNN
+F 1 "~RESET" V 10696 1588 50  0000 L CNN
+F 2 "" H 10850 1400 50  0001 C CNN
+F 3 "~" H 10850 1400 50  0001 C CNN
+	1    10650 1400
+	0    1    1    0   
+$EndComp
+Text GLabel 10650 800  0    50   Input ~ 0
+VREF
+Text GLabel 10650 1200 0    50   Input ~ 0
+SWCLK
+Text GLabel 10650 1400 0    50   Input ~ 0
+~RESET
+Text GLabel 10650 1000 0    50   Input ~ 0
+SWDIO
+$Comp
+L power:GND #PWR0101
+U 1 1 5E3F9E9A
+P 10650 1600
+F 0 "#PWR0101" H 10650 1350 50  0001 C CNN
+F 1 "GND" H 10655 1427 50  0000 C CNN
+F 2 "" H 10650 1600 50  0001 C CNN
+F 3 "" H 10650 1600 50  0001 C CNN
+	1    10650 1600
 	1    0    0    -1  
 $EndComp
-Text Notes 5400 5550 0    50   ~ 0
-buzzer\nled\nePaper (1.8V?)\n64 kB memory\ncapacitive touch\nPMIC/LDO\naccel (magn)\nusb\nsolar\nreset button\npogo: SWD@1.8V [VDDIO, SWCLK, SWDIO, nRESET,GND]\nfiducials
-Text Notes 6400 6100 0    50   ~ 0
-Markings:\nwiress/cross Wireless Incapable\nwrench/cross No user service parts inside
+Text Notes 10350 650  0    50   ~ 0
+SWD
+Wire Notes Line
+	11150 1850 10300 1850
+Wire Notes Line
+	10300 1850 10300 550 
+Wire Notes Line
+	10300 550  11150 550 
+Wire Notes Line
+	11150 550  11150 1850
+$Comp
+L power:GND #PWR0102
+U 1 1 5E403121
+P 10100 6150
+F 0 "#PWR0102" H 10100 5900 50  0001 C CNN
+F 1 "GND" H 10105 5977 50  0000 C CNN
+F 2 "" H 10100 6150 50  0001 C CNN
+F 3 "" H 10100 6150 50  0001 C CNN
+	1    10100 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V8 #PWR0103
+U 1 1 5E403986
+P 10650 2350
+F 0 "#PWR0103" H 10650 2200 50  0001 C CNN
+F 1 "+1V8" H 10665 2523 50  0000 C CNN
+F 2 "" H 10650 2350 50  0001 C CNN
+F 3 "" H 10650 2350 50  0001 C CNN
+	1    10650 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0104
+U 1 1 5E40400E
+P 10900 2350
+F 0 "#PWR0104" H 10900 2200 50  0001 C CNN
+F 1 "+3V3" H 10915 2523 50  0000 C CNN
+F 2 "" H 10900 2350 50  0001 C CNN
+F 3 "" H 10900 2350 50  0001 C CNN
+	1    10900 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Ferrite_Bead_Small FB1
+U 1 1 5E404E44
+P 9250 1900
+F 0 "FB1" H 9350 1946 50  0000 L CNN
+F 1 "Ferrite_Bead_Small" H 9350 1855 50  0000 L CNN
+F 2 "" V 9180 1900 50  0001 C CNN
+F 3 "~" H 9250 1900 50  0001 C CNN
+	1    9250 1900
+	1    0    0    -1  
+$EndComp
+Text Notes 5700 1300 0    50   ~ 0
+A ferrite bead can be added between the main power supply (VDD)\nand VDDANA to prevent digital noise from entering the analog\npower domain. The bead should provide enough impedance\n(e.g. 50Ω at 20MHz and 220Ω at 100MHz) to separate the digital\nand analog power domains. Make sure to select a ferrite\nbead designed for filtering applications with a low DC resistance\nto avoid a large voltage drop across the ferrite bead.
+$Comp
+L Device:Crystal Y1
+U 1 1 5E3F98C0
+P 8200 2700
+F 0 "Y1" V 8246 2569 50  0000 R CNN
+F 1 "32K" V 8155 2569 50  0000 R CNN
+F 2 "" H 8200 2700 50  0001 C CNN
+F 3 "~" H 8200 2700 50  0001 C CNN
+	1    8200 2700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8550 2750 8550 2550
+Wire Wire Line
+	8550 2550 8200 2550
+Wire Wire Line
+	8200 2850 8550 2850
+$Comp
+L Device:C C2
+U 1 1 5E3FBD43
+P 6600 1900
+F 0 "C2" H 6715 1946 50  0000 L CNN
+F 1 "C" H 6715 1855 50  0000 L CNN
+F 2 "" H 6638 1750 50  0001 C CNN
+F 3 "~" H 6600 1900 50  0001 C CNN
+	1    6600 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5E3FC161
+P 8000 2550
+F 0 "C3" V 7748 2550 50  0000 C CNN
+F 1 "C" V 7839 2550 50  0000 C CNN
+F 2 "" H 8038 2400 50  0001 C CNN
+F 3 "~" H 8000 2550 50  0001 C CNN
+	1    8000 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5E3FCBFA
+P 8000 2850
+F 0 "C4" V 7750 2850 50  0000 C CNN
+F 1 "C" V 7850 2850 50  0000 C CNN
+F 2 "" H 8038 2700 50  0001 C CNN
+F 3 "~" H 8000 2850 50  0001 C CNN
+	1    8000 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5E3FDF66
+P 7850 2900
+F 0 "#PWR0105" H 7850 2650 50  0001 C CNN
+F 1 "GND" H 7855 2727 50  0000 C CNN
+F 2 "" H 7850 2900 50  0001 C CNN
+F 3 "" H 7850 2900 50  0001 C CNN
+	1    7850 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 2900 7850 2850
+Connection ~ 7850 2850
+Wire Wire Line
+	7850 2850 7850 2550
+Wire Wire Line
+	8150 2850 8200 2850
+Connection ~ 8200 2850
+Wire Wire Line
+	8150 2550 8200 2550
+Connection ~ 8200 2550
+Text Notes 650  650  0    50   ~ 0
+eInk Display
+Text GLabel 5400 7000 1    50   Input ~ 0
+D+
+Text GLabel 5200 6900 1    50   Input ~ 0
+D-
+Wire Wire Line
+	5000 7450 5000 7550
+Wire Wire Line
+	5000 7250 5200 7250
+Wire Wire Line
+	5000 7550 5200 7550
+$Comp
+L Device:C C1
+U 1 1 5E3FFA49
+P 5200 7400
+F 0 "C1" H 5315 7446 50  0000 L CNN
+F 1 "4.5nF" H 5315 7355 50  0000 L CNN
+F 2 "" H 5238 7250 50  0001 C CNN
+F 3 "~" H 5200 7400 50  0001 C CNN
+	1    5200 7400
+	1    0    0    -1  
+$EndComp
+Connection ~ 5200 7250
+Connection ~ 5200 7550
+Wire Wire Line
+	5200 7550 5600 7550
+$Comp
+L Device:R R3
+U 1 1 5E4003ED
+P 5600 7400
+F 0 "R3" H 5670 7446 50  0000 L CNN
+F 1 "1M" H 5670 7355 50  0000 L CNN
+F 2 "" V 5530 7400 50  0001 C CNN
+F 3 "~" H 5600 7400 50  0001 C CNN
+	1    5600 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5E4014C9
+P 6550 7250
+F 0 "#PWR0106" H 6550 7000 50  0001 C CNN
+F 1 "GND" H 6555 7077 50  0000 C CNN
+F 2 "" H 6550 7250 50  0001 C CNN
+F 3 "" H 6550 7250 50  0001 C CNN
+	1    6550 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0109
+U 1 1 5E404AF2
+P 6550 6600
+F 0 "#PWR0109" H 6550 6450 50  0001 C CNN
+F 1 "+5V" H 6565 6773 50  0000 C CNN
+F 2 "" H 6550 6600 50  0001 C CNN
+F 3 "" H 6550 6600 50  0001 C CNN
+	1    6550 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 7250 5600 7250
+$Comp
+L TPD4S012DRYR:TPD4S012DRYR U2
+U 1 1 5E4073ED
+P 6050 6850
+F 0 "U2" H 6050 7317 50  0000 C CNN
+F 1 "TPD4S012DRYR" H 6050 7226 50  0000 C CNN
+F 2 "TPD4S012DRYR:SON50P100X145X60-6N" H 6050 6850 50  0001 L BNN
+F 3 "Texas Instruments" H 6050 6850 50  0001 L BNN
+	1    6050 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 7050 6550 7250
+$Comp
+L 10118194-0001LF:10118194-0001LF J2
+U 1 1 5E4181B3
+P 4500 7150
+F 0 "J2" H 4393 7717 50  0000 C CNN
+F 1 "10118194-0001LF" H 4393 7626 50  0000 C CNN
+F 2 "10118194-0001LF:AMPHENOL_10118194-0001LF" H 4500 7150 50  0001 L BNN
+F 3 "Unavailable" H 4500 7150 50  0001 L BNN
+F 4 "None" H 4500 7150 50  0001 L BNN "Field4"
+F 5 "10118194-0001LF" H 4500 7150 50  0001 L BNN "Field5"
+F 6 "Micro Usb, 2.0 Type b, Rcpt, Smt" H 4500 7150 50  0001 L BNN "Field6"
+F 7 "None" H 4500 7150 50  0001 L BNN "Field7"
+F 8 "Amphenol ICC" H 4500 7150 50  0001 L BNN "Field8"
+	1    4500 7150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 7150 5550 7050
+Wire Wire Line
+	5500 7050 5500 6850
+Wire Wire Line
+	5500 6850 5550 6850
+Wire Wire Line
+	5300 6950 5300 6650
+Wire Wire Line
+	5400 7050 5400 7000
+Connection ~ 5400 7050
+Wire Wire Line
+	5400 7050 5500 7050
+Wire Wire Line
+	5200 6950 5200 6900
+Connection ~ 5200 6950
+Wire Wire Line
+	5200 6950 5300 6950
+Connection ~ 5600 7250
+Wire Wire Line
+	5600 7250 6550 7250
+$Comp
+L power:+5V #PWR0107
+U 1 1 5E425225
+P 5100 6850
+F 0 "#PWR0107" H 5100 6700 50  0001 C CNN
+F 1 "+5V" H 5115 7023 50  0000 C CNN
+F 2 "" H 5100 6850 50  0001 C CNN
+F 3 "" H 5100 6850 50  0001 C CNN
+	1    5100 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 6850 5100 6850
+Wire Wire Line
+	6550 6650 6550 6600
+Wire Wire Line
+	5300 6650 5550 6650
+Wire Wire Line
+	5000 6950 5200 6950
+Connection ~ 6550 7250
+Wire Wire Line
+	5000 7050 5400 7050
+Wire Wire Line
+	5000 7150 5550 7150
+Text Notes 4150 6400 0    50   ~ 0
+USB Input
+Wire Notes Line
+	4100 6300 6700 6300
+Wire Notes Line
+	6700 7650 4100 7650
+Text GLabel 8550 5250 0    50   Input ~ 0
+D+
+Text GLabel 8550 5150 0    50   Input ~ 0
+D-
+Wire Notes Line
+	6700 7650 6700 6300
+Wire Notes Line
+	4100 7650 4100 6300
+Text GLabel 3900 2900 0    50   Input ~ 0
+SDA
+Text GLabel 3900 3100 0    50   Input ~ 0
+SCL
+Wire Wire Line
+	4800 3300 4800 3500
+$Comp
+L power:GND #PWR0108
+U 1 1 5E437902
+P 4800 3500
+F 0 "#PWR0108" H 4800 3250 50  0001 C CNN
+F 1 "GND" H 4805 3327 50  0000 C CNN
+F 2 "" H 4800 3500 50  0001 C CNN
+F 3 "" H 4800 3500 50  0001 C CNN
+	1    4800 3500
+	1    0    0    -1  
+$EndComp
+Connection ~ 4800 3500
+$Comp
+L custom:IIS2DLPC U3
+U 1 1 5E43BD43
+P 4300 3000
+F 0 "U3" H 4350 3681 50  0000 C CNN
+F 1 "IIS2DLPC" H 4350 3590 50  0000 C CNN
+F 2 "Package_LGA:LGA-12_2x2mm_P0.5mm" H 4450 3550 50  0001 L CNN
+F 3 "www.st.com/resource/en/datasheet/lis2hh12.pdf" H 3950 3000 50  0001 C CNN
+	1    4300 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 3500 4800 3500
+$Comp
+L Memory_Flash:AT25SF081-SSHD-X U4
+U 1 1 5E4432EB
+P 2650 4300
+F 0 "U4" H 3294 4346 50  0000 L CNN
+F 1 "AT25SF641" H 3294 4255 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_5.275x5.275mm_P1.27mm" H 2650 3700 50  0001 C CNN
+F 3 "https://www.adestotech.com/wp-content/uploads/DS-AT25SF081_045.pdf" H 2650 4300 50  0001 C CNN
+	1    2650 4300
+	1    0    0    -1  
+$EndComp
+Text Notes 5100 6250 0    50   ~ 0
+Tie circuit GND to shield or USB GND?
+$Comp
+L XZMDKCBDDG45S-9:XZMDKCBDDG45S-9 U5
+U 1 1 5E44F3FF
+P 5750 3850
+F 0 "U5" H 5732 4267 50  0000 C CNN
+F 1 "XZMDKCBDDG45S-9" H 5732 4176 50  0000 C CNN
+F 2 "XZMDKCBDDG45S-9:PLCC-4" H 5850 3850 50  0001 C CNN
+F 3 "" H 5850 3850 50  0001 C CNN
+	1    5750 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L BQ25155:BQ21061YFPR IC1
+U 1 1 5E4571B8
+P 1600 5800
+F 0 "IC1" H 2250 6065 50  0000 C CNN
+F 1 "BQ21061YFPR" H 2250 5974 50  0000 C CNN
+F 2 "BQ25155:BGA20C40P4X5_162X202X50" H 2750 5900 50  0001 L CNN
+F 3 "https://www.ti.com/lit/gpn/BQ21061" H 2750 5800 50  0001 L CNN
+F 4 "500-mA 1-cell linear charger with 10-nA ship mode, power-path, regulated system voltage and LDO</" H 2750 5700 50  0001 L CNN "Description"
+F 5 "0.5" H 2750 5600 50  0001 L CNN "Height"
+F 6 "Texas Instruments" H 2750 5500 50  0001 L CNN "Manufacturer_Name"
+F 7 "BQ21061YFPR" H 2750 5400 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "595-BQ21061YFPR" H 2750 5300 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=595-BQ21061YFPR" H 2750 5200 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 2750 5100 50  0001 L CNN "RS Part Number"
+F 11 "" H 2750 5000 50  0001 L CNN "RS Price/Stock"
+	1    1600 5800
+	1    0    0    -1  
+$EndComp
+Text Notes 800  5450 0    50   ~ 0
+PMIC/LDO
+Text Notes 1850 3750 0    50   ~ 0
+Memory
+Text Notes 3700 2200 0    50   ~ 0
+Accelerometer
+Text Notes 5500 3300 0    50   ~ 0
+LED
+$Comp
+L custom:eInk_waveshare_1.54A U6
+U 1 1 5E462A5E
+P 750 2150
+F 0 "U6" V -600 2100 50  0000 L CNN
+F 1 "eInk_waveshare_1.54A" H 350 2150 50  0000 L CNN
+F 2 "custom:eInk_waveshare_1.54A" H 750 2150 50  0001 C CNN
+F 3 "" H 750 2150 50  0001 C CNN
+	1    750  2150
+	0    1    1    0   
+$EndComp
+$Comp
+L XF2M-2415-1A:XF2M-2415-1A J1
+U 1 1 5E477E76
+P 1150 2100
+F 0 "J1" H 1043 733 50  0000 C CNN
+F 1 "XF2M-2415-1A" H 1043 824 50  0000 C CNN
+F 2 "XF2M-2415-1A:OMRON_XF2M-2415-1A" H 1150 2100 50  0001 L BNN
+F 3 "TE Connectivity" H 1150 2100 50  0001 L BNN
+F 4 "Manufacturer Recommendations" H 1150 2100 50  0001 L BNN "Field4"
+	1    1150 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5E47A1DD
+P 1700 1000
+F 0 "C5" H 1815 1046 50  0000 L CNN
+F 1 "C" H 1815 955 50  0000 L CNN
+F 2 "" H 1738 850 50  0001 C CNN
+F 3 "~" H 1700 1000 50  0001 C CNN
+	1    1700 1000
+	0    1    1    0   
+$EndComp
+$Comp
+L SP-1511S-6:SP-1511S-6 LS2
+U 1 1 5E485031
+P 5050 1500
+F 0 "LS2" H 5155 1546 50  0000 L CNN
+F 1 "SP-1511S-6" H 5155 1455 50  0000 L CNN
+F 2 "SP-1511S-6:SP-1511S-6_ALT" H 5050 1500 50  0001 L BNN
+F 3 "18 x 13 x 2.5 mm 300 to 1150 Hz 92 dB Spring Lead Low Profile Micro Speaker" H 5050 1500 50  0001 L BNN
+F 4 "CUI" H 5050 1500 50  0001 L BNN "Field4"
+F 5 "CMS-18138A-SP" H 5050 1500 50  0001 L BNN "Field5"
+F 6 "Good" H 5050 1500 50  0001 L BNN "Field6"
+F 7 "1.93 USD" H 5050 1500 50  0001 L BNN "Field7"
+F 8 "CUI" H 5050 1500 50  0001 L BNN "Field8"
+	1    5050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery BT1
+U 1 1 5E49276A
+P 5700 2250
+F 0 "BT1" H 5808 2296 50  0000 L CNN
+F 1 "Battery" H 5808 2205 50  0000 L CNN
+F 2 "lir2032:LIR2032" V 5700 2310 50  0001 C CNN
+F 3 "~" V 5700 2310 50  0001 C CNN
+	1    5700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Fiducial FID1
+U 1 1 5E49E427
+P 9850 650
+F 0 "FID1" H 9935 696 50  0000 L CNN
+F 1 "Fiducial" H 9935 605 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 9850 650 50  0001 C CNN
+F 3 "~" H 9850 650 50  0001 C CNN
+	1    9850 650 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Fiducial FID2
+U 1 1 5E49F2F6
+P 9850 900
+F 0 "FID2" H 9935 946 50  0000 L CNN
+F 1 "Fiducial" H 9935 855 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 9850 900 50  0001 C CNN
+F 3 "~" H 9850 900 50  0001 C CNN
+	1    9850 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Fiducial FID3
+U 1 1 5E49F92F
+P 9850 1150
+F 0 "FID3" H 9935 1196 50  0000 L CNN
+F 1 "Fiducial" H 9935 1105 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 9850 1150 50  0001 C CNN
+F 3 "~" H 9850 1150 50  0001 C CNN
+	1    9850 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCU_Microchip_SAML:ATSAML21J18B-AUT U1
+U 1 1 5E4A7A7D
+P 9550 4250
+F 0 "U1" H 9550 2261 50  0000 C CNN
+F 1 "ATSAML21J18B-AUT" H 9550 2170 50  0000 C CNN
+F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 10750 6050 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001477A.pdf" H 9550 4250 50  0001 C CNN
+	1    9550 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9450 6150 9650 6150
+$Comp
+L TL3315NF100Q:TL3315NF100Q S1
+U 1 1 5E4BB22B
+P 3950 5300
+F 0 "S1" H 3950 5576 50  0000 C CNN
+F 1 "TL3315NF100Q" H 3950 5300 50  0001 L BNN
+F 2 "TL3315NF100Q:TL3315NF100Q" H 3950 5300 50  0001 L BNN
+F 3 "EG4620CT-ND" H 3950 5300 50  0001 L BNN
+	1    3950 5300
+	1    0    0    -1  
+$EndComp
+Text Notes 3650 4950 0    50   ~ 0
+RESET
 $EndSCHEMATC

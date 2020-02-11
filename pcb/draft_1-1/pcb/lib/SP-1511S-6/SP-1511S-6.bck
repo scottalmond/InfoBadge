@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LT1307BCMS8
+D Single Cell Micropower 600kHz PWM DC/DC Converter, 10µA Quiescent Current, MSOP-8
+K Micropower PWM DC/DC Converter
+F https://www.analog.com/media/en/technical-documentation/data-sheets/1307fa.pdf
+$ENDCMP
+#
+$CMP SP-1511S-6
+D Single Cell Micropower 600kHz PWM DC/DC Converter, 50µA Quiescent Current, MSOP-8
+K Micropower PWM DC/DC Converter
+F https://www.analog.com/media/en/technical-documentation/data-sheets/1307fa.pdf
+$ENDCMP
+#
+#End Doc Library

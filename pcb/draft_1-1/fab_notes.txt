@@ -1,0 +1,10 @@
+*** update schematic license and author CC BY 4.0
+
+*** start routing by connecting 100 nF caps near pads
+
+x ***accel: CW/CCW reverse pins on pads
+  actually, pdf view is looking up at chip, thus pads are mirrored on section 9.2, keep KiCAD AS_IS
+
+*** update eletronic egg schematic and drawing annotation at bottom right to rev 1.2
+
+*** verify placement of eInk header with respect to cble length from opposing side of board
