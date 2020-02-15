@@ -253,3 +253,64 @@ reset button
 $0.13@25
 https://www.digikey.com/product-detail/en/e-switch/TL3315NF100Q/EG4620CT-ND/1870400
 
+-- eInk support 2/14/20
+
+MOSFET N-CH 30V 1.4A SC-70-3
+SI1308EDL $0.33@25
+https://www.digikey.com/product-detail/en/vishay-siliconix/SI1308EDL-T1-GE3/SI1308EDL-T1-GE3CT-ND/4914888
+
+MOSFET P-CH 30V SOT23
+AO3401 [not for new designs]
+alt? DMP3099L-7 $0.22@25
+https://www.digikey.com/product-detail/en/diodes-incorporated/DMP3099L-7/DMP3099L-7DICT-ND/5218217
+[alts down to $0.16@25]
+
+S8050
+
+-- eInk  new dev board adds new parts for extra features, remove...
+new feature: if RST is pulled low, VCC is removed from device.  Can do same with BQ25155 without extra circuitry...
+new https://www.waveshare.com/w/upload/5/5b/1.54inch_e-Paper_Schematic.pdf
+old https://www.waveshare.com/w/upload/archive/5/5b/20200103064017%211.54inch_e-Paper_Schematic.pdf
+
+[alt ref circuit] https://www.pervasivedisplays.com/wp-content/uploads/2019/06/1P200-00_01_E2154CS091_24PINFPC_20180807-1.pdf
+from https://www.digikey.com/product-detail/en/pervasive-displays/E2154CS091/E2154CS091-ND/9636013
+
+waveshare part sheets https://www.waveshare.com/wiki/4.3inch_e-Paper_Datasheets
+
+MOSFET N-CH 30V 1.4A SC-70-3
+SI1308EDL $0.33@25
+https://www.digikey.com/product-detail/en/vishay-siliconix/SI1308EDL-T1-GE3/SI1308EDL-T1-GE3CT-ND/4914888
+
+68 uH 1207 (3218 Metric)
+LB3218T680K $0.16@10
+https://www.digikey.com/product-detail/en/taiyo-yuden/LB3218T680K/587-3086-1-ND/2763511
+
+MBR0530 $0.12@100 [x4]
+https://www.digikey.com/product-detail/en/on-semiconductor/MBR0530/MBR0530CT-ND/2053105
+
+"105" = 1uF;  "5" = "u"
+"104" = 10 uF (?)
+
+"475" = 4.7uF
+
+used same capacitor throughout (?) https://www.waveshare.com/w/upload/archive/5/5b/20181015110431%211.54inch_e-Paper_Schematic.pdf
+
+-- audio SP-1511S-6 (?)
+
+class D amplifier, 70 mA @ 8 ohms --> 0.56V...
+LDO 0.6 to 3.7V. 45mW; 75 mA
+super cap? >$1
+
+3 kHz 90 mA
+https://www.digikey.com/product-detail/en/cui-devices/CMT-8503-90-SMT-TR/102-CMT-8503-90-SMT-DKR-ND/10326257
+
+drive circuit is NPN + diode
+
+
+
+
+
+
+
+*** need lanyard...
+*** eInk runs at lower voltages?

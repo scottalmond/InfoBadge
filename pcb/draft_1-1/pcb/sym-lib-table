@@ -11,4 +11,5 @@
   (lib (name CMS-18138A-SP)(type Legacy)(uri ${KIPRJMOD}/lib/CMS-18138A-SP/CMS-18138A-SP.lib)(options "")(descr ""))
   (lib (name SP-1511S-6)(type Legacy)(uri ${KIPRJMOD}/lib/SP-1511S-6/SP-1511S-6.lib)(options "")(descr ""))
   (lib (name TL3315NF100Q)(type Legacy)(uri ${KIPRJMOD}/lib/TL3315NF100Q/TL3315NF100Q.lib)(options "")(descr ""))
+  (lib (name CMT-8503-90-SMT-TR)(type Legacy)(uri ${KIPRJMOD}/lib/CMT-8503-90-SMT-TR/CMT-8503-90-SMT-TR.lib)(options "")(descr ""))
 )
