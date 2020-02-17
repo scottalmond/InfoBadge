@@ -15,13 +15,13 @@ Comment4 ""
 $EndDescr
 Text Notes 3950 6000 0    50   ~ 0
 battery\nbuzzer\nled\nePaper (1.8V?)\nFlash memory\ncapacitive touch\nPMIC/LDO\naccel\n(magn)\nusb\n(solar)\nreset button\npogo: SWD@1.8V [VDDIO, SWCLK, SWDIO, nRESET,GND]\nfiducials\nexternal crystal (precison boost?)
-Text Notes 6850 6250 0    50   ~ 0
+Text Notes 6800 6450 0    50   ~ 0
 Markings:\nwiress/cross Wireless Incapable\nwrench/cross No user service parts inside
 Text GLabel 8550 5550 0    50   Input ~ 0
 SWDIO
 Text GLabel 8550 5450 0    50   Input ~ 0
 SWCLK
-Text GLabel 8550 5750 0    50   Input ~ 0
+Text GLabel 7950 5750 0    50   Input ~ 0
 ~RESET
 Text GLabel 9200 2300 0    50   Input ~ 0
 VREF
@@ -1307,8 +1307,6 @@ Wire Wire Line
 Connection ~ 5300 1050
 Wire Wire Line
 	5300 1050 5200 1050
-Text Notes 8200 5850 0    50   ~ 0
-add filtering passives on reset
 Wire Wire Line
 	1600 6400 1600 6500
 Connection ~ 1600 6500
@@ -1610,4 +1608,46 @@ Wire Wire Line
 	11000 5400 11050 5400
 Wire Wire Line
 	11000 5700 11050 5700
+Text Notes 6750 4300 0    50   ~ 0
+1V8 or 3V3
+$Comp
+L Device:C C?
+U 1 1 5E936869
+P 8350 5900
+F 0 "C?" H 8465 5946 50  0000 L CNN
+F 1 "100nF" H 8465 5855 50  0000 L CNN
+F 2 "" H 8388 5750 50  0001 C CNN
+F 3 "~" H 8350 5900 50  0001 C CNN
+	1    8350 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E937211
+P 8350 6050
+F 0 "#PWR?" H 8350 5800 50  0001 C CNN
+F 1 "GND" H 8355 5877 50  0000 C CNN
+F 2 "" H 8350 6050 50  0001 C CNN
+F 3 "" H 8350 6050 50  0001 C CNN
+	1    8350 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E94127E
+P 8100 5750
+F 0 "R?" V 7893 5750 50  0000 C CNN
+F 1 "R" V 7984 5750 50  0000 C CNN
+F 2 "" V 8030 5750 50  0001 C CNN
+F 3 "~" H 8100 5750 50  0001 C CNN
+	1    8100 5750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8250 5750 8350 5750
+Connection ~ 8350 5750
+Wire Wire Line
+	8350 5750 8550 5750
+Text Notes 7850 5650 0    50   ~ 0
+>330 ohms
 $EndSCHEMATC
