@@ -1,4 +1,4 @@
-16945847275051312
+16952174153936160
 10118194-0001LF
 AMPHENOL_10118194-0001LF
 
@@ -6,6 +6,20 @@ AMPHENOL_10118194-0001LF
 0
 11
 11
+BQ21061YFPR
+BGA20C40P4X5_162X202X50
+YFP0020-1
+Integrated Circuit
+0
+20
+20
+BQ21061YFPR
+NE555DR
+D (R-PDSO-G8)
+Integrated Circuit
+0
+8
+8
 BQ25155
 BGA20C40P4X5_162X202X50
 YFP0020-1
@@ -14,12 +28,12 @@ Integrated Circuit
 20
 20
 BQ25155
-NE555DR
-D (R-PDSO-G8)
-Integrated Circuit
+VI-321-DP-RC-S
+
+
 0
-8
-8
+24
+24
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2246,6 +2260,20 @@ XDCR_CMT-8503-90-SMT-TR
 0
 4
 4
+CPT-1117-83-SMT-TR
+XDCR_CPT-1117-83-SMT-TR
+
+
+0
+2
+2
+CPT-1117-83-SMT-TR
+XDCR_CPT-1117-83-SMT-TR_reverse
+
+
+0
+2
+2
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,

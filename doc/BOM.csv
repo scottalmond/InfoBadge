@@ -274,6 +274,8 @@ old https://www.waveshare.com/w/upload/archive/5/5b/20200103064017%211.54inch_e-
 
 [alt ref circuit] https://www.pervasivedisplays.com/wp-content/uploads/2019/06/1P200-00_01_E2154CS091_24PINFPC_20180807-1.pdf
 from https://www.digikey.com/product-detail/en/pervasive-displays/E2154CS091/E2154CS091-ND/9636013
+adafruit version https://cdn-learn.adafruit.com/assets/assets/000/057/645/original/adafruit_products_schem.png?1531712746
+corrected values https://hackaday.io/project/164772-e-ink-adapter
 
 waveshare part sheets https://www.waveshare.com/wiki/4.3inch_e-Paper_Datasheets
 
@@ -295,6 +297,13 @@ https://www.digikey.com/product-detail/en/on-semiconductor/MBR0530/MBR0530CT-ND/
 
 used same capacitor throughout (?) https://www.waveshare.com/w/upload/archive/5/5b/20181015110431%211.54inch_e-Paper_Schematic.pdf
 
+<$0.10@25 for 0R47 0603?
+
+https://www.digikey.com/products/en/resistors/chip-resistor-surface-mount/52?FV=-8%7C52%2C1989%7C0%2Cmu470+mOhms%7C2085&quantity=25&ColumnSort=1000011&page=1&stock=1&nstock=1&k=resistor&pageSize=25&pkeyword=resistor
+
+C2 on old schematic "104" but on new rev is 4.7 uF...
+
+
 -- audio SP-1511S-6 (?)
 
 class D amplifier, 70 mA @ 8 ohms --> 0.56V...
@@ -306,11 +315,44 @@ https://www.digikey.com/product-detail/en/cui-devices/CMT-8503-90-SMT-TR/102-CMT
 
 drive circuit is NPN + diode
 
+consider H-bridge
+$1.18@25 https://www.digikey.com/product-detail/en/cui-devices/CT-1205H-SMT-TR/102-1266-1-ND/610974
+https://media.digikey.com/pdf/Application%20Notes/CUI%20Application%20Notes/Buzzer_Basics.pdf
+$0.70@25 https://www.digikey.com/product-detail/en/akm-semiconductor-inc/AP1017AEN/AP1017AENCT-ND/5822594
 
+piezo have much lower current draw, no h-bridge AST1341MCTRQ $1.55@25
+https://www.digikey.com/product-detail/en/mallory-sonalert-products-inc/AST1341MCTRQ/458-AST1341MCTRQCT-ND/11569157
+Need high-sink pins for 10+ mA
+appear to all rely on 12+V input.  Although to favor flatter form factor and lower cost
 
+leaning toward CMT-8503-90-SMT-TR + diode + NPN
+NPN $0.11@10
+https://www.digikey.com/product-detail/en/diodes-incorporated/MMBT3904-7-F/MMBT3904-FDICT-ND/815727
+CMT-8503-90-SMT-TR $1.31@25
+https://www.digikey.com/product-detail/en/cui-devices/CMT-8503-90-SMT-TR/102-CMT-8503-90-SMT-CT-ND/10326248
+actually NPN with <150 mV Vce is over $0.25@25, on par with n-fet already in design...?
 
+--
 
+somehow got BQ21061 in library $2.35@25
+difference from BQ25155 is removal of ADC and $0.50
+https://www.digikey.com/product-detail/en/texas-instruments/BQ21061YFPT/296-BQ21061YFPTCT-ND/10715976
+footprint appears the same
+removing ADC removes ability to directly measure battery charge
+but only can measure battery when plugged in anyway (when NOT in /LP mode)
+*perhaps hold this cost saving in reserve until after prototype rev
 
+20 mA at 1.95V
+1.35V at 20mA = 67.5 ohms or more
+68 ohms is a penny at 25
 
-*** need lanyard...
-*** eInk runs at lower voltages?
+edge of case 2.15, edge of board 1.45
+Case 0.7mm, 30 mil
+
+SAML crystal...
+
+*** need current limiting resistors on LEDs - max 12 mA, and high-current pins assigned
+  page 1017: the following pins are High Sink pins and have different properties than normal pins:PA08, PA09, PA16, PA17, PA22, PA23, PA27, PA31
+*** setup design rules
+*** need lanyard... lanyard hole dimensioning
+*** eInk runs at lower voltages than 3V3?

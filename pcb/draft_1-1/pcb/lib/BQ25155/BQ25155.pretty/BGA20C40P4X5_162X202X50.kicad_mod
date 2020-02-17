@@ -1,4 +1,4 @@
-(module BGA20C40P4X5_162X202X50 (layer F.Cu) (tedit 5E3FB6E5)
+(module BGA20C40P4X5_162X202X50 (layer F.Cu) (tedit 5E0C0F0A)
   (descr YFP0020-1)
   (tags "Integrated Circuit")
   (attr smd)
@@ -47,11 +47,6 @@
   (pad E3 smd circle (at 0.2 0.8 90) (size 0.226 0.226) (layers F.Cu F.Paste F.Mask))
   (pad E4 smd circle (at 0.6 0.8 90) (size 0.226 0.226) (layers F.Cu F.Paste F.Mask))
   (model D:\Projects\CAD\PCB\SamacSys_Parts.3dshapes\BQ21061YFPR.stp
-    (at (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
-  )
-  (model ${KIPRJMOD}/lib/BQ25155/SamacSys_Parts.3dshapes/BQ21061YFPR.stp
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
