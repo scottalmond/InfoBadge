@@ -8,3 +8,37 @@ x ***accel: CW/CCW reverse pins on pads
 *** update eletronic egg schematic and drawing annotation at bottom right to rev 1.2
 
 *** verify placement of eInk header with respect to cble length from opposing side of board
+*** connect analog reference https://hackaday.io/project/165887-pam8301-breakout-board
+
+How to get debug terminal?
+ Arduino Serial.setup(9600); Serial.println("test");
+
+How to do this simple task with Atmel Studio?
+  Usb examples only have echo, with no clear way to insert content between the read and write operations.  Useless as a demo of the communication protocol
+
+DAC example non-functional.  Which pin is DAC_0? PA02 as DAC0
+*NO* indication of expectations: voltage only goes up to 0.24V (0.12V when looping quickly), though multimeter had a grounding issue offset. had to add delay_ms(10); to see anything recognizable on DMM
+test_analog_location3 - reached 3.3V output with 4096 steps
+Need to read from PA02; and tie PA03 to ID (3.3V to VREF)
+
+"GETTING-STARTED1.proj":
+File > New > Example Project >
+Family > SAML21
+Search > "started"
+Select: Getting-started Application - SAM L21 Xplained Pro B
+
+Upload to target
+Use Target USB at 38400 baud for messages (why isn't this terminal a feature in Atmel Studio???)
+
+-- Getting Started Example --
+-- SAML21_XPLAINED_PRO --
+-- Compiled: Feb 22 2020 18:46:17 --
+-- Pressing and release button SW0 should make LED0 on and off --
+The output is triggered by TC counter
+
+CONF_STDIO_BAUDRATE is 38400
+keywords: configure_console, usart_get_config_defaults, stdio_serial_init, usart_enable
+
+
+
+

@@ -349,10 +349,17 @@ but only can measure battery when plugged in anyway (when NOT in /LP mode)
 edge of case 2.15, edge of board 1.45
 Case 0.7mm, 30 mil
 
-SAML crystal...
+SAML crystal... actually, don't see a way that this improves low power configuration...
+
+use CCL to input SPI and output right back out to the screen?
+
+
+
+
 
 *** need current limiting resistors on LEDs - max 12 mA, and high-current pins assigned
   page 1017: the following pins are High Sink pins and have different properties than normal pins:PA08, PA09, PA16, PA17, PA22, PA23, PA27, PA31
 *** setup design rules
 *** need lanyard... lanyard hole dimensioning
 *** eInk runs at lower voltages than 3V3?
+*** what is max I2C data rate?

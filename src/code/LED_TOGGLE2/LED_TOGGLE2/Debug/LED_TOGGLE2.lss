@@ -1,0 +1,1666 @@
+
+LED_TOGGLE2.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000008e8  00000000  00000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .relocate     00000004  20000000  000008e8  00020000  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .lpram        00000000  30000000  30000000  00020004  2**0
+                  CONTENTS
+  3 .bss          0000003c  20000004  000008ec  00020004  2**2
+                  ALLOC
+  4 .stack        00002000  20000040  00000928  00020004  2**0
+                  ALLOC
+  5 .ARM.attributes 00000028  00000000  00000000  00020004  2**0
+                  CONTENTS, READONLY
+  6 .comment      00000059  00000000  00000000  0002002c  2**0
+                  CONTENTS, READONLY
+  7 .debug_info   0000d54a  00000000  00000000  00020085  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00001a6a  00000000  00000000  0002d5cf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_aranges 00000228  00000000  00000000  0002f039  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 000001b0  00000000  00000000  0002f261  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_macro  0001a7db  00000000  00000000  0002f411  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_line   00005e1f  00000000  00000000  00049bec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_str    00099b5e  00000000  00000000  0004fa0b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_frame  000004d4  00000000  00000000  000e956c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_loc    00001821  00000000  00000000  000e9a40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <exception_table>:
+   0:	40 20 00 20 31 06 00 00 2d 06 00 00 2d 06 00 00     @ . 1...-...-...
+	...
+  2c:	2d 06 00 00 00 00 00 00 00 00 00 00 2d 06 00 00     -...........-...
+  3c:	c9 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     ....-...-...-...
+  4c:	2d 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     -...-...-...-...
+  5c:	2d 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     -...-...-...-...
+  6c:	2d 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     -...-...-...-...
+  7c:	2d 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     -...-...-...-...
+  8c:	2d 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     -...-...-...-...
+  9c:	2d 06 00 00 2d 06 00 00 2d 06 00 00 2d 06 00 00     -...-...-...-...
+  ac:	2d 06 00 00 00 00 00 00                             -.......
+
+000000b4 <__do_global_dtors_aux>:
+  b4:	b510      	push	{r4, lr}
+  b6:	4c06      	ldr	r4, [pc, #24]	; (d0 <__do_global_dtors_aux+0x1c>)
+  b8:	7823      	ldrb	r3, [r4, #0]
+  ba:	2b00      	cmp	r3, #0
+  bc:	d107      	bne.n	ce <__do_global_dtors_aux+0x1a>
+  be:	4b05      	ldr	r3, [pc, #20]	; (d4 <__do_global_dtors_aux+0x20>)
+  c0:	2b00      	cmp	r3, #0
+  c2:	d002      	beq.n	ca <__do_global_dtors_aux+0x16>
+  c4:	4804      	ldr	r0, [pc, #16]	; (d8 <__do_global_dtors_aux+0x24>)
+  c6:	e000      	b.n	ca <__do_global_dtors_aux+0x16>
+  c8:	bf00      	nop
+  ca:	2301      	movs	r3, #1
+  cc:	7023      	strb	r3, [r4, #0]
+  ce:	bd10      	pop	{r4, pc}
+  d0:	20000004 	.word	0x20000004
+  d4:	00000000 	.word	0x00000000
+  d8:	000008e8 	.word	0x000008e8
+
+000000dc <frame_dummy>:
+  dc:	4b08      	ldr	r3, [pc, #32]	; (100 <frame_dummy+0x24>)
+  de:	b510      	push	{r4, lr}
+  e0:	2b00      	cmp	r3, #0
+  e2:	d003      	beq.n	ec <frame_dummy+0x10>
+  e4:	4907      	ldr	r1, [pc, #28]	; (104 <frame_dummy+0x28>)
+  e6:	4808      	ldr	r0, [pc, #32]	; (108 <frame_dummy+0x2c>)
+  e8:	e000      	b.n	ec <frame_dummy+0x10>
+  ea:	bf00      	nop
+  ec:	4807      	ldr	r0, [pc, #28]	; (10c <frame_dummy+0x30>)
+  ee:	6803      	ldr	r3, [r0, #0]
+  f0:	2b00      	cmp	r3, #0
+  f2:	d100      	bne.n	f6 <frame_dummy+0x1a>
+  f4:	bd10      	pop	{r4, pc}
+  f6:	4b06      	ldr	r3, [pc, #24]	; (110 <frame_dummy+0x34>)
+  f8:	2b00      	cmp	r3, #0
+  fa:	d0fb      	beq.n	f4 <frame_dummy+0x18>
+  fc:	4798      	blx	r3
+  fe:	e7f9      	b.n	f4 <frame_dummy+0x18>
+ 100:	00000000 	.word	0x00000000
+ 104:	20000008 	.word	0x20000008
+ 108:	000008e8 	.word	0x000008e8
+ 10c:	000008e8 	.word	0x000008e8
+ 110:	00000000 	.word	0x00000000
+
+00000114 <cpu_irq_enter_critical>:
+volatile bool g_interrupt_enabled = true;
+#endif
+
+void cpu_irq_enter_critical(void)
+{
+	if (cpu_irq_critical_section_counter == 0) {
+ 114:	4b0c      	ldr	r3, [pc, #48]	; (148 <cpu_irq_enter_critical+0x34>)
+ 116:	681b      	ldr	r3, [r3, #0]
+ 118:	2b00      	cmp	r3, #0
+ 11a:	d106      	bne.n	12a <cpu_irq_enter_critical+0x16>
+ */
+__STATIC_FORCEINLINE uint32_t __get_PRIMASK(void)
+{
+  uint32_t result;
+
+  __ASM volatile ("MRS %0, primask" : "=r" (result) :: "memory");
+ 11c:	f3ef 8310 	mrs	r3, PRIMASK
+		if (cpu_irq_is_enabled()) {
+ 120:	2b00      	cmp	r3, #0
+ 122:	d007      	beq.n	134 <cpu_irq_enter_critical+0x20>
+			cpu_irq_disable();
+			cpu_irq_prev_interrupt_state = true;
+		} else {
+			/* Make sure the to save the prev state as false */
+			cpu_irq_prev_interrupt_state = false;
+ 124:	2200      	movs	r2, #0
+ 126:	4b09      	ldr	r3, [pc, #36]	; (14c <cpu_irq_enter_critical+0x38>)
+ 128:	701a      	strb	r2, [r3, #0]
+		}
+
+	}
+
+	cpu_irq_critical_section_counter++;
+ 12a:	4a07      	ldr	r2, [pc, #28]	; (148 <cpu_irq_enter_critical+0x34>)
+ 12c:	6813      	ldr	r3, [r2, #0]
+ 12e:	3301      	adds	r3, #1
+ 130:	6013      	str	r3, [r2, #0]
+}
+ 132:	4770      	bx	lr
+  __ASM volatile ("cpsid i" : : : "memory");
+ 134:	b672      	cpsid	i
+  \details Ensures the apparent order of the explicit memory operations before
+           and after the instruction, without ensuring their completion.
+ */
+__STATIC_FORCEINLINE void __DMB(void)
+{
+  __ASM volatile ("dmb 0xF":::"memory");
+ 136:	f3bf 8f5f 	dmb	sy
+			cpu_irq_disable();
+ 13a:	2200      	movs	r2, #0
+ 13c:	4b04      	ldr	r3, [pc, #16]	; (150 <cpu_irq_enter_critical+0x3c>)
+ 13e:	701a      	strb	r2, [r3, #0]
+			cpu_irq_prev_interrupt_state = true;
+ 140:	3201      	adds	r2, #1
+ 142:	4b02      	ldr	r3, [pc, #8]	; (14c <cpu_irq_enter_critical+0x38>)
+ 144:	701a      	strb	r2, [r3, #0]
+ 146:	e7f0      	b.n	12a <cpu_irq_enter_critical+0x16>
+ 148:	20000020 	.word	0x20000020
+ 14c:	20000024 	.word	0x20000024
+ 150:	20000000 	.word	0x20000000
+
+00000154 <cpu_irq_leave_critical>:
+void cpu_irq_leave_critical(void)
+{
+	/* Check if the user is trying to leave a critical section when not in a critical section */
+	Assert(cpu_irq_critical_section_counter > 0);
+
+	cpu_irq_critical_section_counter--;
+ 154:	4b08      	ldr	r3, [pc, #32]	; (178 <cpu_irq_leave_critical+0x24>)
+ 156:	681a      	ldr	r2, [r3, #0]
+ 158:	3a01      	subs	r2, #1
+ 15a:	601a      	str	r2, [r3, #0]
+
+	/* Only enable global interrupts when the counter reaches 0 and the state of the global interrupt flag
+	   was enabled when entering critical state */
+	if ((cpu_irq_critical_section_counter == 0) && (cpu_irq_prev_interrupt_state)) {
+ 15c:	681b      	ldr	r3, [r3, #0]
+ 15e:	2b00      	cmp	r3, #0
+ 160:	d109      	bne.n	176 <cpu_irq_leave_critical+0x22>
+ 162:	4b06      	ldr	r3, [pc, #24]	; (17c <cpu_irq_leave_critical+0x28>)
+ 164:	781b      	ldrb	r3, [r3, #0]
+ 166:	2b00      	cmp	r3, #0
+ 168:	d005      	beq.n	176 <cpu_irq_leave_critical+0x22>
+		cpu_irq_enable();
+ 16a:	2201      	movs	r2, #1
+ 16c:	4b04      	ldr	r3, [pc, #16]	; (180 <cpu_irq_leave_critical+0x2c>)
+ 16e:	701a      	strb	r2, [r3, #0]
+ 170:	f3bf 8f5f 	dmb	sy
+  __ASM volatile ("cpsie i" : : : "memory");
+ 174:	b662      	cpsie	i
+	}
+}
+ 176:	4770      	bx	lr
+ 178:	20000020 	.word	0x20000020
+ 17c:	20000024 	.word	0x20000024
+ 180:	20000000 	.word	0x20000000
+
+00000184 <system_board_init>:
+void board_init(void);
+#  pragma weak board_init=system_board_init
+#endif
+
+void system_board_init(void)
+{
+ 184:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 186:	b083      	sub	sp, #12
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Default configuration values */
+	config->direction  = PORT_PIN_DIR_INPUT;
+	config->input_pull = PORT_PIN_PULL_UP;
+ 188:	ac01      	add	r4, sp, #4
+ 18a:	2501      	movs	r5, #1
+ 18c:	7065      	strb	r5, [r4, #1]
+	config->powersave  = false;
+ 18e:	2700      	movs	r7, #0
+ 190:	70a7      	strb	r7, [r4, #2]
+	struct port_config pin_conf;
+	port_get_config_defaults(&pin_conf);
+
+	/* Configure LEDs as outputs, turn them off */
+	pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+ 192:	7025      	strb	r5, [r4, #0]
+	port_pin_set_config(LED_0_PIN, &pin_conf);
+ 194:	0021      	movs	r1, r4
+ 196:	202a      	movs	r0, #42	; 0x2a
+ 198:	4e06      	ldr	r6, [pc, #24]	; (1b4 <system_board_init+0x30>)
+ 19a:	47b0      	blx	r6
+	PortGroup *const port_base = port_get_group_from_gpio_pin(gpio_pin);
+	uint32_t pin_mask  = (1UL << (gpio_pin % 32));
+
+	/* Set the pin to high or low atomically based on the requested level */
+	if (level) {
+		port_base->OUTSET.reg = pin_mask;
+ 19c:	2280      	movs	r2, #128	; 0x80
+ 19e:	00d2      	lsls	r2, r2, #3
+ 1a0:	4b05      	ldr	r3, [pc, #20]	; (1b8 <system_board_init+0x34>)
+ 1a2:	619a      	str	r2, [r3, #24]
+	port_pin_set_output_level(LED_0_PIN, LED_0_INACTIVE);
+
+ 	/* Set buttons as inputs */
+	 pin_conf.direction  = PORT_PIN_DIR_INPUT;
+ 1a4:	7027      	strb	r7, [r4, #0]
+     pin_conf.input_pull = PORT_PIN_PULL_UP;
+ 1a6:	7065      	strb	r5, [r4, #1]
+     port_pin_set_config(BUTTON_0_PIN, &pin_conf);
+ 1a8:	0021      	movs	r1, r4
+ 1aa:	2002      	movs	r0, #2
+ 1ac:	47b0      	blx	r6
+	port_pin_set_output_level(AT86RFX_RST_PIN, true);
+	port_pin_set_output_level(AT86RFX_SLP_PIN, true);
+	pin_conf.direction  = PORT_PIN_DIR_INPUT;
+	port_pin_set_config(AT86RFX_SPI_MISO, &pin_conf);
+#endif	
+}
+ 1ae:	b003      	add	sp, #12
+ 1b0:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 1b2:	46c0      	nop			; (mov r8, r8)
+ 1b4:	000001bd 	.word	0x000001bd
+ 1b8:	40002880 	.word	0x40002880
+
+000001bc <port_pin_set_config>:
+ *  \param[in] config    Configuration settings for the pin
+ */
+void port_pin_set_config(
+		const uint8_t gpio_pin,
+		const struct port_config *const config)
+{
+ 1bc:	b500      	push	{lr}
+ 1be:	b083      	sub	sp, #12
+{
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Default configuration values */
+	config->mux_position = SYSTEM_PINMUX_GPIO;
+ 1c0:	ab01      	add	r3, sp, #4
+ 1c2:	2280      	movs	r2, #128	; 0x80
+ 1c4:	701a      	strb	r2, [r3, #0]
+
+	struct system_pinmux_config pinmux_config;
+	system_pinmux_get_config_defaults(&pinmux_config);
+
+	pinmux_config.mux_position = SYSTEM_PINMUX_GPIO;
+	pinmux_config.direction    = (enum system_pinmux_pin_dir)config->direction;
+ 1c6:	780a      	ldrb	r2, [r1, #0]
+ 1c8:	705a      	strb	r2, [r3, #1]
+	pinmux_config.input_pull   = (enum system_pinmux_pin_pull)config->input_pull;
+ 1ca:	784a      	ldrb	r2, [r1, #1]
+ 1cc:	709a      	strb	r2, [r3, #2]
+	pinmux_config.powersave    = config->powersave;
+ 1ce:	788a      	ldrb	r2, [r1, #2]
+ 1d0:	70da      	strb	r2, [r3, #3]
+
+	system_pinmux_pin_set_config(gpio_pin, &pinmux_config);
+ 1d2:	0019      	movs	r1, r3
+ 1d4:	4b01      	ldr	r3, [pc, #4]	; (1dc <port_pin_set_config+0x20>)
+ 1d6:	4798      	blx	r3
+}
+ 1d8:	b003      	add	sp, #12
+ 1da:	bd00      	pop	{pc}
+ 1dc:	000005cd 	.word	0x000005cd
+
+000001e0 <system_clock_source_get_hz>:
+ *
+ * \returns Frequency of the given clock source, in Hz.
+ */
+uint32_t system_clock_source_get_hz(
+		const enum system_clock_source clock_source)
+{
+ 1e0:	b510      	push	{r4, lr}
+	switch (clock_source) {
+ 1e2:	2808      	cmp	r0, #8
+ 1e4:	d803      	bhi.n	1ee <system_clock_source_get_hz+0xe>
+ 1e6:	0080      	lsls	r0, r0, #2
+ 1e8:	4b1d      	ldr	r3, [pc, #116]	; (260 <system_clock_source_get_hz+0x80>)
+ 1ea:	581b      	ldr	r3, [r3, r0]
+ 1ec:	469f      	mov	pc, r3
+		}
+
+		return _system_clock_inst.dpll.frequency;
+
+	default:
+		return 0;
+ 1ee:	2000      	movs	r0, #0
+ 1f0:	e034      	b.n	25c <system_clock_source_get_hz+0x7c>
+		return _system_clock_inst.xosc.frequency;
+ 1f2:	4b1c      	ldr	r3, [pc, #112]	; (264 <system_clock_source_get_hz+0x84>)
+ 1f4:	6918      	ldr	r0, [r3, #16]
+ 1f6:	e031      	b.n	25c <system_clock_source_get_hz+0x7c>
+		return (OSCCTRL->OSC16MCTRL.bit.FSEL+1)*4000000UL;
+ 1f8:	4b1b      	ldr	r3, [pc, #108]	; (268 <system_clock_source_get_hz+0x88>)
+ 1fa:	7d18      	ldrb	r0, [r3, #20]
+ 1fc:	0700      	lsls	r0, r0, #28
+ 1fe:	0f80      	lsrs	r0, r0, #30
+ 200:	1c43      	adds	r3, r0, #1
+ 202:	481a      	ldr	r0, [pc, #104]	; (26c <system_clock_source_get_hz+0x8c>)
+ 204:	4358      	muls	r0, r3
+ 206:	e029      	b.n	25c <system_clock_source_get_hz+0x7c>
+		return _system_clock_inst.xosc32k.frequency;
+ 208:	4b16      	ldr	r3, [pc, #88]	; (264 <system_clock_source_get_hz+0x84>)
+ 20a:	6958      	ldr	r0, [r3, #20]
+ 20c:	e026      	b.n	25c <system_clock_source_get_hz+0x7c>
+		if (!(_system_clock_inst.dfll.control & OSCCTRL_DFLLCTRL_ENABLE))
+ 20e:	4b15      	ldr	r3, [pc, #84]	; (264 <system_clock_source_get_hz+0x84>)
+ 210:	681b      	ldr	r3, [r3, #0]
+			return 0;
+ 212:	2000      	movs	r0, #0
+		if (!(_system_clock_inst.dfll.control & OSCCTRL_DFLLCTRL_ENABLE))
+ 214:	079b      	lsls	r3, r3, #30
+ 216:	d521      	bpl.n	25c <system_clock_source_get_hz+0x7c>
+	while (!(OSCCTRL->STATUS.reg & OSCCTRL_STATUS_DFLLRDY)) {
+ 218:	4913      	ldr	r1, [pc, #76]	; (268 <system_clock_source_get_hz+0x88>)
+ 21a:	2280      	movs	r2, #128	; 0x80
+ 21c:	0052      	lsls	r2, r2, #1
+ 21e:	68cb      	ldr	r3, [r1, #12]
+ 220:	4213      	tst	r3, r2
+ 222:	d0fc      	beq.n	21e <system_clock_source_get_hz+0x3e>
+		switch(_system_clock_inst.dfll.control &
+ 224:	4b0f      	ldr	r3, [pc, #60]	; (264 <system_clock_source_get_hz+0x84>)
+ 226:	681a      	ldr	r2, [r3, #0]
+ 228:	2324      	movs	r3, #36	; 0x24
+ 22a:	4013      	ands	r3, r2
+ 22c:	2b04      	cmp	r3, #4
+ 22e:	d001      	beq.n	234 <system_clock_source_get_hz+0x54>
+			return 48000000UL;
+ 230:	480f      	ldr	r0, [pc, #60]	; (270 <system_clock_source_get_hz+0x90>)
+ 232:	e013      	b.n	25c <system_clock_source_get_hz+0x7c>
+			return system_gclk_chan_get_hz(OSCCTRL_GCLK_ID_DFLL48) *
+ 234:	2000      	movs	r0, #0
+ 236:	4b0f      	ldr	r3, [pc, #60]	; (274 <system_clock_source_get_hz+0x94>)
+ 238:	4798      	blx	r3
+					(_system_clock_inst.dfll.mul & 0xffff);
+ 23a:	4b0a      	ldr	r3, [pc, #40]	; (264 <system_clock_source_get_hz+0x84>)
+ 23c:	689b      	ldr	r3, [r3, #8]
+ 23e:	041b      	lsls	r3, r3, #16
+ 240:	0c1b      	lsrs	r3, r3, #16
+			return system_gclk_chan_get_hz(OSCCTRL_GCLK_ID_DFLL48) *
+ 242:	4358      	muls	r0, r3
+ 244:	e00a      	b.n	25c <system_clock_source_get_hz+0x7c>
+		if (!(OSCCTRL->DPLLCTRLA.reg & OSCCTRL_DPLLCTRLA_ENABLE)) {
+ 246:	2328      	movs	r3, #40	; 0x28
+ 248:	4a07      	ldr	r2, [pc, #28]	; (268 <system_clock_source_get_hz+0x88>)
+ 24a:	5cd3      	ldrb	r3, [r2, r3]
+			return 0;
+ 24c:	2000      	movs	r0, #0
+		if (!(OSCCTRL->DPLLCTRLA.reg & OSCCTRL_DPLLCTRLA_ENABLE)) {
+ 24e:	079b      	lsls	r3, r3, #30
+ 250:	d504      	bpl.n	25c <system_clock_source_get_hz+0x7c>
+		return _system_clock_inst.dpll.frequency;
+ 252:	4b04      	ldr	r3, [pc, #16]	; (264 <system_clock_source_get_hz+0x84>)
+ 254:	68d8      	ldr	r0, [r3, #12]
+ 256:	e001      	b.n	25c <system_clock_source_get_hz+0x7c>
+		return 32768UL;
+ 258:	2080      	movs	r0, #128	; 0x80
+ 25a:	0200      	lsls	r0, r0, #8
+	}
+}
+ 25c:	bd10      	pop	{r4, pc}
+ 25e:	46c0      	nop			; (mov r8, r8)
+ 260:	000008a4 	.word	0x000008a4
+ 264:	20000028 	.word	0x20000028
+ 268:	40000c00 	.word	0x40000c00
+ 26c:	003d0900 	.word	0x003d0900
+ 270:	02dc6c00 	.word	0x02dc6c00
+ 274:	000004f5 	.word	0x000004f5
+
+00000278 <system_clock_init>:
+ * \note OSC16M is always enabled and if user selects other clocks for GCLK generators,
+ * the OSC16M default enable can be disabled after system_clock_init. Make sure the
+ * clock switches successfully before disabling OSC8M.
+ */
+void system_clock_init(void)
+{
+ 278:	b510      	push	{r4, lr}
+ 27a:	b084      	sub	sp, #16
+	/* Various bits in the INTFLAG register can be set to one at startup.
+	   This will ensure that these bits are cleared */
+	OSCCTRL->INTFLAG.reg = OSCCTRL_INTFLAG_DFLLRDY;
+ 27c:	2280      	movs	r2, #128	; 0x80
+ 27e:	0052      	lsls	r2, r2, #1
+ 280:	4b32      	ldr	r3, [pc, #200]	; (34c <system_clock_init+0xd4>)
+ 282:	609a      	str	r2, [r3, #8]
+	SUPC->INTFLAG.reg = SUPC_INTFLAG_BOD33RDY | SUPC_INTFLAG_BOD33DET;
+ 284:	3afd      	subs	r2, #253	; 0xfd
+ 286:	4b32      	ldr	r3, [pc, #200]	; (350 <system_clock_init+0xd8>)
+ 288:	609a      	str	r2, [r3, #8]
+static inline void system_flash_set_waitstates(uint8_t wait_states)
+{
+	Assert(NVMCTRL_CTRLB_RWS((uint32_t)wait_states) ==
+			((uint32_t)wait_states << NVMCTRL_CTRLB_RWS_Pos));
+
+	NVMCTRL->CTRLB.bit.RWS = wait_states;
+ 28a:	4a32      	ldr	r2, [pc, #200]	; (354 <system_clock_init+0xdc>)
+ 28c:	6853      	ldr	r3, [r2, #4]
+ 28e:	211e      	movs	r1, #30
+ 290:	438b      	bics	r3, r1
+ 292:	6053      	str	r3, [r2, #4]
+ */
+static inline enum status_code system_switch_performance_level(
+					const enum system_performance_level performance_level)
+{
+
+	if (performance_level == (enum system_performance_level)PM->PLCFG.reg) {
+ 294:	2380      	movs	r3, #128	; 0x80
+ 296:	05db      	lsls	r3, r3, #23
+ 298:	789b      	ldrb	r3, [r3, #2]
+ 29a:	2b02      	cmp	r3, #2
+ 29c:	d00f      	beq.n	2be <system_clock_init+0x46>
+		return STATUS_OK;
+	}
+
+#if SAML22 || SAML21XXXB || SAMR34J || SAMR35J
+	if (PM->PLCFG.reg & PM_PLCFG_PLDIS) {
+ 29e:	2380      	movs	r3, #128	; 0x80
+ 2a0:	05db      	lsls	r3, r3, #23
+ 2a2:	789b      	ldrb	r3, [r3, #2]
+ 2a4:	b25b      	sxtb	r3, r3
+ 2a6:	2b00      	cmp	r3, #0
+ 2a8:	db09      	blt.n	2be <system_clock_init+0x46>
+		return STATUS_ERR_INVALID_ARG;
+	}
+#endif
+
+	/* Clear performance level status */
+	PM->INTFLAG.reg = PM_INTFLAG_PLRDY;
+ 2aa:	2380      	movs	r3, #128	; 0x80
+ 2ac:	05db      	lsls	r3, r3, #23
+ 2ae:	2201      	movs	r2, #1
+ 2b0:	719a      	strb	r2, [r3, #6]
+
+	/* Switch performance level */
+	PM->PLCFG.reg = performance_level;
+ 2b2:	3201      	adds	r2, #1
+ 2b4:	709a      	strb	r2, [r3, #2]
+
+	/* Waiting performance level ready */
+	while (!PM->INTFLAG.reg) {
+ 2b6:	001a      	movs	r2, r3
+ 2b8:	7993      	ldrb	r3, [r2, #6]
+ 2ba:	2b00      	cmp	r3, #0
+ 2bc:	d0fc      	beq.n	2b8 <system_clock_init+0x40>
+	system_clock_source_enable(SYSTEM_CLOCK_SOURCE_OSC32K);
+#endif
+
+	/* OSC16M */
+	if (CONF_CLOCK_OSC16M_FREQ_SEL == SYSTEM_OSC16M_4M){
+		OSCCTRL->OSC16MCTRL.bit.ONDEMAND = CONF_CLOCK_OSC16M_ON_DEMAND ;
+ 2be:	4b23      	ldr	r3, [pc, #140]	; (34c <system_clock_init+0xd4>)
+ 2c0:	7d19      	ldrb	r1, [r3, #20]
+ 2c2:	2280      	movs	r2, #128	; 0x80
+ 2c4:	4252      	negs	r2, r2
+ 2c6:	430a      	orrs	r2, r1
+ 2c8:	751a      	strb	r2, [r3, #20]
+		OSCCTRL->OSC16MCTRL.bit.RUNSTDBY = CONF_CLOCK_OSC16M_RUN_IN_STANDBY;
+ 2ca:	7d1a      	ldrb	r2, [r3, #20]
+ 2cc:	2140      	movs	r1, #64	; 0x40
+ 2ce:	438a      	bics	r2, r1
+ 2d0:	751a      	strb	r2, [r3, #20]
+	system_clock_source_dfll_set_config(&dfll_conf);
+#endif
+
+	/* GCLK */
+#if CONF_CLOCK_CONFIGURE_GCLK == true
+	system_gclk_init();
+ 2d2:	4b21      	ldr	r3, [pc, #132]	; (358 <system_clock_init+0xe0>)
+ 2d4:	4798      	blx	r3
+	MCLK->BUPDIV.reg = MCLK_BUPDIV_BUPDIV(1 << divider);
+ 2d6:	4c21      	ldr	r4, [pc, #132]	; (35c <system_clock_init+0xe4>)
+ 2d8:	2301      	movs	r3, #1
+ 2da:	71a3      	strb	r3, [r4, #6]
+	MCLK->LPDIV.reg = MCLK_LPDIV_LPDIV(1 << divider);
+ 2dc:	7163      	strb	r3, [r4, #5]
+	MCLK->CPUDIV.reg = MCLK_CPUDIV_CPUDIV(1 << divider);
+ 2de:	7123      	strb	r3, [r4, #4]
+{
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Default configuration values */
+	config->division_factor    = 1;
+ 2e0:	a901      	add	r1, sp, #4
+ 2e2:	604b      	str	r3, [r1, #4]
+	config->high_when_disabled = false;
+ 2e4:	2300      	movs	r3, #0
+ 2e6:	704b      	strb	r3, [r1, #1]
+#if SAML21 || SAML22  || SAMR30 || SAMR34 || SAMR35
+	config->source_clock       = GCLK_SOURCE_OSC16M;
+ 2e8:	2206      	movs	r2, #6
+ 2ea:	700a      	strb	r2, [r1, #0]
+#elif (SAMC20) || (SAMC21)
+	config->source_clock       = GCLK_SOURCE_OSC48M;
+#else
+	config->source_clock       = GCLK_SOURCE_OSC8M;
+#endif
+	config->run_in_standby     = false;
+ 2ec:	720b      	strb	r3, [r1, #8]
+	config->output_enable      = false;
+ 2ee:	724b      	strb	r3, [r1, #9]
+	system_main_clock_set_failure_detect(CONF_CLOCK_CPU_CLOCK_FAILURE_DETECT);
+
+	/* GCLK 0 */
+#if CONF_CLOCK_CONFIGURE_GCLK == true
+	/* Configure the main GCLK last as it might depend on other generators */
+	_CONF_CLOCK_GCLK_CONFIG(0, ~);
+ 2f0:	2000      	movs	r0, #0
+ 2f2:	4b1b      	ldr	r3, [pc, #108]	; (360 <system_clock_init+0xe8>)
+ 2f4:	4798      	blx	r3
+ 2f6:	2000      	movs	r0, #0
+ 2f8:	4b1a      	ldr	r3, [pc, #104]	; (364 <system_clock_init+0xec>)
+ 2fa:	4798      	blx	r3
+	return (system_gclk_gen_get_hz(GCLK_GENERATOR_0) / MCLK->CPUDIV.reg);
+ 2fc:	2000      	movs	r0, #0
+ 2fe:	4b1a      	ldr	r3, [pc, #104]	; (368 <system_clock_init+0xf0>)
+ 300:	4798      	blx	r3
+ 302:	7921      	ldrb	r1, [r4, #4]
+ 304:	b2c9      	uxtb	r1, r1
+ 306:	4b19      	ldr	r3, [pc, #100]	; (36c <system_clock_init+0xf4>)
+ 308:	4798      	blx	r3
+	uint32_t cpu_freq = system_cpu_clock_get_hz();
+
+	/* Set the BUPDIV & LPDIV value such that backup & low power domain clock 
+	 * does not exceed their max clock freq even if CPU is configured to it's 
+	 * maximum frequency */
+	if ((cpu_freq > 6000000) && ((CONF_CLOCK_BACKUP_DIVIDER == SYSTEM_MAIN_CLOCK_DIV_1) \
+ 30a:	4b19      	ldr	r3, [pc, #100]	; (370 <system_clock_init+0xf8>)
+ 30c:	4298      	cmp	r0, r3
+ 30e:	d902      	bls.n	316 <system_clock_init+0x9e>
+	MCLK->BUPDIV.reg = MCLK_BUPDIV_BUPDIV(1 << divider);
+ 310:	2208      	movs	r2, #8
+ 312:	71a2      	strb	r2, [r4, #6]
+	MCLK->LPDIV.reg = MCLK_LPDIV_LPDIV(1 << divider);
+ 314:	7162      	strb	r2, [r4, #5]
+		system_backup_clock_set_divider(SYSTEM_MAIN_CLOCK_DIV_8);
+		system_low_power_clock_set_divider(SYSTEM_MAIN_CLOCK_DIV_8);
+	}
+
+	/* If CPU frequency is less than 12MHz, scale down performance level to PL0 */	
+	if (cpu_freq <= 12000000) {
+ 316:	4b17      	ldr	r3, [pc, #92]	; (374 <system_clock_init+0xfc>)
+ 318:	4298      	cmp	r0, r3
+ 31a:	d814      	bhi.n	346 <system_clock_init+0xce>
+	if (performance_level == (enum system_performance_level)PM->PLCFG.reg) {
+ 31c:	2380      	movs	r3, #128	; 0x80
+ 31e:	05db      	lsls	r3, r3, #23
+ 320:	789b      	ldrb	r3, [r3, #2]
+ 322:	2b00      	cmp	r3, #0
+ 324:	d00f      	beq.n	346 <system_clock_init+0xce>
+	if (PM->PLCFG.reg & PM_PLCFG_PLDIS) {
+ 326:	2380      	movs	r3, #128	; 0x80
+ 328:	05db      	lsls	r3, r3, #23
+ 32a:	789b      	ldrb	r3, [r3, #2]
+ 32c:	b25b      	sxtb	r3, r3
+ 32e:	2b00      	cmp	r3, #0
+ 330:	db09      	blt.n	346 <system_clock_init+0xce>
+	PM->INTFLAG.reg = PM_INTFLAG_PLRDY;
+ 332:	2380      	movs	r3, #128	; 0x80
+ 334:	05db      	lsls	r3, r3, #23
+ 336:	2201      	movs	r2, #1
+ 338:	719a      	strb	r2, [r3, #6]
+	PM->PLCFG.reg = performance_level;
+ 33a:	2200      	movs	r2, #0
+ 33c:	709a      	strb	r2, [r3, #2]
+	while (!PM->INTFLAG.reg) {
+ 33e:	001a      	movs	r2, r3
+ 340:	7993      	ldrb	r3, [r2, #6]
+ 342:	2b00      	cmp	r3, #0
+ 344:	d0fc      	beq.n	340 <system_clock_init+0xc8>
+		system_switch_performance_level(SYSTEM_PERFORMANCE_LEVEL_0);
+	}
+}
+ 346:	b004      	add	sp, #16
+ 348:	bd10      	pop	{r4, pc}
+ 34a:	46c0      	nop			; (mov r8, r8)
+ 34c:	40000c00 	.word	0x40000c00
+ 350:	40001400 	.word	0x40001400
+ 354:	41004000 	.word	0x41004000
+ 358:	00000379 	.word	0x00000379
+ 35c:	40000400 	.word	0x40000400
+ 360:	0000039d 	.word	0x0000039d
+ 364:	00000449 	.word	0x00000449
+ 368:	00000489 	.word	0x00000489
+ 36c:	00000745 	.word	0x00000745
+ 370:	005b8d80 	.word	0x005b8d80
+ 374:	00b71b00 	.word	0x00b71b00
+
+00000378 <system_gclk_init>:
+			MCLK->APBAMASK.reg |= mask;
+ 378:	4a06      	ldr	r2, [pc, #24]	; (394 <system_gclk_init+0x1c>)
+ 37a:	6953      	ldr	r3, [r2, #20]
+ 37c:	2140      	movs	r1, #64	; 0x40
+ 37e:	430b      	orrs	r3, r1
+ 380:	6153      	str	r3, [r2, #20]
+{
+	/* Turn on the digital interface clock */
+	system_apb_clock_set_mask(SYSTEM_CLOCK_APB_APBA, MCLK_APBAMASK_GCLK);
+
+	/* Software reset the module to ensure it is re-initialized correctly */
+	GCLK->CTRLA.reg = GCLK_CTRLA_SWRST;
+ 382:	2201      	movs	r2, #1
+ 384:	4b04      	ldr	r3, [pc, #16]	; (398 <system_gclk_init+0x20>)
+ 386:	701a      	strb	r2, [r3, #0]
+	while (GCLK->CTRLA.reg & GCLK_CTRLA_SWRST) {
+ 388:	0019      	movs	r1, r3
+ 38a:	780b      	ldrb	r3, [r1, #0]
+ 38c:	4213      	tst	r3, r2
+ 38e:	d1fc      	bne.n	38a <system_gclk_init+0x12>
+		/* Wait for reset to complete */
+	}
+}
+ 390:	4770      	bx	lr
+ 392:	46c0      	nop			; (mov r8, r8)
+ 394:	40000400 	.word	0x40000400
+ 398:	40001800 	.word	0x40001800
+
+0000039c <system_gclk_gen_set_config>:
+ * \param[in] config     Configuration settings for the generator
+ */
+void system_gclk_gen_set_config(
+		const uint8_t generator,
+		struct system_gclk_gen_config *const config)
+{
+ 39c:	b570      	push	{r4, r5, r6, lr}
+ 39e:	0004      	movs	r4, r0
+	/* Cache new register configurations to minimize sync requirements. */
+	uint32_t new_genctrl_config ;
+
+
+	/* Select the requested source clock for the generator */
+	new_genctrl_config = config->source_clock << GCLK_GENCTRL_SRC_Pos;
+ 3a0:	780d      	ldrb	r5, [r1, #0]
+
+	/* Configure the clock to be either high or low when disabled */
+	if (config->high_when_disabled) {
+ 3a2:	784b      	ldrb	r3, [r1, #1]
+ 3a4:	2b00      	cmp	r3, #0
+ 3a6:	d002      	beq.n	3ae <system_gclk_gen_set_config+0x12>
+		new_genctrl_config |= GCLK_GENCTRL_OOV;
+ 3a8:	2380      	movs	r3, #128	; 0x80
+ 3aa:	00db      	lsls	r3, r3, #3
+ 3ac:	431d      	orrs	r5, r3
+	}
+
+	/* Configure if the clock output to I/O pin should be enabled. */
+	if (config->output_enable) {
+ 3ae:	7a4b      	ldrb	r3, [r1, #9]
+ 3b0:	2b00      	cmp	r3, #0
+ 3b2:	d002      	beq.n	3ba <system_gclk_gen_set_config+0x1e>
+		new_genctrl_config |= GCLK_GENCTRL_OE;
+ 3b4:	2380      	movs	r3, #128	; 0x80
+ 3b6:	011b      	lsls	r3, r3, #4
+ 3b8:	431d      	orrs	r5, r3
+	}
+
+	/* Set division factor */
+	if (config->division_factor > 1) {
+ 3ba:	6848      	ldr	r0, [r1, #4]
+ 3bc:	2801      	cmp	r0, #1
+ 3be:	d90f      	bls.n	3e0 <system_gclk_gen_set_config+0x44>
+		/* Check if division is a power of two */
+		if (((config->division_factor & (config->division_factor - 1)) == 0)) {
+ 3c0:	1e43      	subs	r3, r0, #1
+ 3c2:	4218      	tst	r0, r3
+ 3c4:	d131      	bne.n	42a <system_gclk_gen_set_config+0x8e>
+			 * register */
+
+			uint32_t div2_count = 0;
+
+			uint32_t mask;
+			for (mask = (1UL << 1); mask < config->division_factor;
+ 3c6:	2802      	cmp	r0, #2
+ 3c8:	d92d      	bls.n	426 <system_gclk_gen_set_config+0x8a>
+ 3ca:	2302      	movs	r3, #2
+ 3cc:	2200      	movs	r2, #0
+						mask <<= 1) {
+				div2_count++;
+ 3ce:	3201      	adds	r2, #1
+						mask <<= 1) {
+ 3d0:	005b      	lsls	r3, r3, #1
+			for (mask = (1UL << 1); mask < config->division_factor;
+ 3d2:	4298      	cmp	r0, r3
+ 3d4:	d8fb      	bhi.n	3ce <system_gclk_gen_set_config+0x32>
+ 3d6:	2380      	movs	r3, #128	; 0x80
+ 3d8:	015b      	lsls	r3, r3, #5
+ 3da:	431d      	orrs	r5, r3
+			}
+
+			/* Set binary divider power of 2 division factor */
+			new_genctrl_config  |= div2_count << GCLK_GENCTRL_DIV_Pos;
+ 3dc:	0412      	lsls	r2, r2, #16
+			new_genctrl_config |= GCLK_GENCTRL_DIVSEL;
+ 3de:	4315      	orrs	r5, r2
+		}
+
+	}
+
+	/* Enable or disable the clock in standby mode */
+	if (config->run_in_standby) {
+ 3e0:	7a0b      	ldrb	r3, [r1, #8]
+ 3e2:	2b00      	cmp	r3, #0
+ 3e4:	d002      	beq.n	3ec <system_gclk_gen_set_config+0x50>
+		new_genctrl_config |= GCLK_GENCTRL_RUNSTDBY;
+ 3e6:	2380      	movs	r3, #128	; 0x80
+ 3e8:	019b      	lsls	r3, r3, #6
+ 3ea:	431d      	orrs	r5, r3
+	 if (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL(1 << generator )){
+ 3ec:	2604      	movs	r6, #4
+ 3ee:	40a6      	lsls	r6, r4
+ 3f0:	4911      	ldr	r1, [pc, #68]	; (438 <system_gclk_gen_set_config+0x9c>)
+ 3f2:	4a12      	ldr	r2, [pc, #72]	; (43c <system_gclk_gen_set_config+0xa0>)
+ 3f4:	684b      	ldr	r3, [r1, #4]
+ 3f6:	4013      	ands	r3, r2
+	}
+
+	while (system_gclk_is_syncing(generator)) {
+ 3f8:	421e      	tst	r6, r3
+ 3fa:	d1fb      	bne.n	3f4 <system_gclk_gen_set_config+0x58>
+ * are only re-enabled upon leaving the outermost nested critical section.
+ *
+ */
+static inline void system_interrupt_enter_critical_section(void)
+{
+	cpu_irq_enter_critical();
+ 3fc:	4b10      	ldr	r3, [pc, #64]	; (440 <system_gclk_gen_set_config+0xa4>)
+ 3fe:	4798      	blx	r3
+ 400:	00a4      	lsls	r4, r4, #2
+ 402:	4b0d      	ldr	r3, [pc, #52]	; (438 <system_gclk_gen_set_config+0x9c>)
+ 404:	469c      	mov	ip, r3
+ 406:	4464      	add	r4, ip
+		/* Wait for synchronization */
+	};
+
+	system_interrupt_enter_critical_section();
+
+	GCLK->GENCTRL[generator].reg = new_genctrl_config | (GCLK->GENCTRL[generator].reg & GCLK_GENCTRL_GENEN);
+ 408:	6a22      	ldr	r2, [r4, #32]
+ 40a:	2380      	movs	r3, #128	; 0x80
+ 40c:	005b      	lsls	r3, r3, #1
+ 40e:	401a      	ands	r2, r3
+ 410:	432a      	orrs	r2, r5
+ 412:	6222      	str	r2, [r4, #32]
+	 if (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL(1 << generator )){
+ 414:	4661      	mov	r1, ip
+ 416:	4a09      	ldr	r2, [pc, #36]	; (43c <system_gclk_gen_set_config+0xa0>)
+ 418:	684b      	ldr	r3, [r1, #4]
+ 41a:	4013      	ands	r3, r2
+
+	while (system_gclk_is_syncing(generator)) {
+ 41c:	421e      	tst	r6, r3
+ 41e:	d1fb      	bne.n	418 <system_gclk_gen_set_config+0x7c>
+ * are only re-enabled upon leaving the outermost nested critical section.
+ *
+ */
+static inline void system_interrupt_leave_critical_section(void)
+{
+	cpu_irq_leave_critical();
+ 420:	4b08      	ldr	r3, [pc, #32]	; (444 <system_gclk_gen_set_config+0xa8>)
+ 422:	4798      	blx	r3
+		/* Wait for synchronization */
+	};
+
+	system_interrupt_leave_critical_section();
+}
+ 424:	bd70      	pop	{r4, r5, r6, pc}
+			for (mask = (1UL << 1); mask < config->division_factor;
+ 426:	2200      	movs	r2, #0
+ 428:	e7d5      	b.n	3d6 <system_gclk_gen_set_config+0x3a>
+					(config->division_factor) << GCLK_GENCTRL_DIV_Pos;
+ 42a:	0400      	lsls	r0, r0, #16
+			new_genctrl_config |= GCLK_GENCTRL_IDC;
+ 42c:	2380      	movs	r3, #128	; 0x80
+ 42e:	009b      	lsls	r3, r3, #2
+ 430:	4318      	orrs	r0, r3
+ 432:	4305      	orrs	r5, r0
+ 434:	e7d4      	b.n	3e0 <system_gclk_gen_set_config+0x44>
+ 436:	46c0      	nop			; (mov r8, r8)
+ 438:	40001800 	.word	0x40001800
+ 43c:	000007fc 	.word	0x000007fc
+ 440:	00000115 	.word	0x00000115
+ 444:	00000155 	.word	0x00000155
+
+00000448 <system_gclk_gen_enable>:
+ *
+ * \param[in] generator  Generic Clock Generator index to enable
+ */
+void system_gclk_gen_enable(
+		const uint8_t generator)
+{
+ 448:	b510      	push	{r4, lr}
+ 44a:	0004      	movs	r4, r0
+	 if (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL(1 << generator )){
+ 44c:	2204      	movs	r2, #4
+ 44e:	4082      	lsls	r2, r0
+ 450:	4809      	ldr	r0, [pc, #36]	; (478 <system_gclk_gen_enable+0x30>)
+ 452:	490a      	ldr	r1, [pc, #40]	; (47c <system_gclk_gen_enable+0x34>)
+ 454:	6843      	ldr	r3, [r0, #4]
+ 456:	400b      	ands	r3, r1
+	while (system_gclk_is_syncing(generator)) {
+ 458:	421a      	tst	r2, r3
+ 45a:	d1fb      	bne.n	454 <system_gclk_gen_enable+0xc>
+	cpu_irq_enter_critical();
+ 45c:	4b08      	ldr	r3, [pc, #32]	; (480 <system_gclk_gen_enable+0x38>)
+ 45e:	4798      	blx	r3
+ 460:	00a4      	lsls	r4, r4, #2
+ 462:	4b05      	ldr	r3, [pc, #20]	; (478 <system_gclk_gen_enable+0x30>)
+ 464:	469c      	mov	ip, r3
+ 466:	4464      	add	r4, ip
+	};
+
+	system_interrupt_enter_critical_section();
+
+	/* Enable generator */
+	GCLK->GENCTRL[generator].reg |= GCLK_GENCTRL_GENEN;
+ 468:	6a22      	ldr	r2, [r4, #32]
+ 46a:	2380      	movs	r3, #128	; 0x80
+ 46c:	005b      	lsls	r3, r3, #1
+ 46e:	4313      	orrs	r3, r2
+ 470:	6223      	str	r3, [r4, #32]
+	cpu_irq_leave_critical();
+ 472:	4b04      	ldr	r3, [pc, #16]	; (484 <system_gclk_gen_enable+0x3c>)
+ 474:	4798      	blx	r3
+
+	system_interrupt_leave_critical_section();
+}
+ 476:	bd10      	pop	{r4, pc}
+ 478:	40001800 	.word	0x40001800
+ 47c:	000007fc 	.word	0x000007fc
+ 480:	00000115 	.word	0x00000115
+ 484:	00000155 	.word	0x00000155
+
+00000488 <system_gclk_gen_get_hz>:
+ *
+ * \return The frequency of the generic clock generator, in Hz.
+ */
+uint32_t system_gclk_gen_get_hz(
+		const uint8_t generator)
+{
+ 488:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 48a:	0004      	movs	r4, r0
+	 if (GCLK->SYNCBUSY.reg & GCLK_SYNCBUSY_GENCTRL(1 << generator )){
+ 48c:	2204      	movs	r2, #4
+ 48e:	4082      	lsls	r2, r0
+ 490:	4812      	ldr	r0, [pc, #72]	; (4dc <system_gclk_gen_get_hz+0x54>)
+ 492:	4913      	ldr	r1, [pc, #76]	; (4e0 <system_gclk_gen_get_hz+0x58>)
+ 494:	6843      	ldr	r3, [r0, #4]
+ 496:	400b      	ands	r3, r1
+	while (system_gclk_is_syncing(generator)) {
+ 498:	421a      	tst	r2, r3
+ 49a:	d1fb      	bne.n	494 <system_gclk_gen_get_hz+0xc>
+	cpu_irq_enter_critical();
+ 49c:	4b11      	ldr	r3, [pc, #68]	; (4e4 <system_gclk_gen_get_hz+0x5c>)
+ 49e:	4798      	blx	r3
+
+	system_interrupt_enter_critical_section();
+
+	/* Get the frequency of the source connected to the GCLK generator */
+	uint32_t gen_input_hz = system_clock_source_get_hz(
+			(enum system_clock_source)GCLK->GENCTRL[generator].bit.SRC);
+ 4a0:	4f0e      	ldr	r7, [pc, #56]	; (4dc <system_gclk_gen_get_hz+0x54>)
+ 4a2:	3408      	adds	r4, #8
+ 4a4:	00a4      	lsls	r4, r4, #2
+ 4a6:	59e0      	ldr	r0, [r4, r7]
+ 4a8:	0700      	lsls	r0, r0, #28
+ 4aa:	0f00      	lsrs	r0, r0, #28
+	uint32_t gen_input_hz = system_clock_source_get_hz(
+ 4ac:	4b0e      	ldr	r3, [pc, #56]	; (4e8 <system_gclk_gen_get_hz+0x60>)
+ 4ae:	4798      	blx	r3
+ 4b0:	0006      	movs	r6, r0
+
+	uint8_t divsel = GCLK->GENCTRL[generator].bit.DIVSEL;
+ 4b2:	59e5      	ldr	r5, [r4, r7]
+ 4b4:	04ed      	lsls	r5, r5, #19
+ 4b6:	0fed      	lsrs	r5, r5, #31
+	uint32_t divider = GCLK->GENCTRL[generator].bit.DIV;
+ 4b8:	59e4      	ldr	r4, [r4, r7]
+ 4ba:	0c24      	lsrs	r4, r4, #16
+	cpu_irq_leave_critical();
+ 4bc:	4b0b      	ldr	r3, [pc, #44]	; (4ec <system_gclk_gen_get_hz+0x64>)
+ 4be:	4798      	blx	r3
+
+	system_interrupt_leave_critical_section();
+
+	/* Check if the generator is using fractional or binary division */
+	if (!divsel && divider > 1) {
+ 4c0:	2d00      	cmp	r5, #0
+ 4c2:	d107      	bne.n	4d4 <system_gclk_gen_get_hz+0x4c>
+ 4c4:	2c01      	cmp	r4, #1
+ 4c6:	d907      	bls.n	4d8 <system_gclk_gen_get_hz+0x50>
+		gen_input_hz /= divider;
+ 4c8:	0021      	movs	r1, r4
+ 4ca:	0030      	movs	r0, r6
+ 4cc:	4b08      	ldr	r3, [pc, #32]	; (4f0 <system_gclk_gen_get_hz+0x68>)
+ 4ce:	4798      	blx	r3
+ 4d0:	0006      	movs	r6, r0
+ 4d2:	e001      	b.n	4d8 <system_gclk_gen_get_hz+0x50>
+	} else if (divsel) {
+		gen_input_hz >>= (divider+1);
+ 4d4:	3401      	adds	r4, #1
+ 4d6:	40e6      	lsrs	r6, r4
+	}
+
+	return gen_input_hz;
+}
+ 4d8:	0030      	movs	r0, r6
+ 4da:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+ 4dc:	40001800 	.word	0x40001800
+ 4e0:	000007fc 	.word	0x000007fc
+ 4e4:	00000115 	.word	0x00000115
+ 4e8:	000001e1 	.word	0x000001e1
+ 4ec:	00000155 	.word	0x00000155
+ 4f0:	00000745 	.word	0x00000745
+
+000004f4 <system_gclk_chan_get_hz>:
+ *
+ * \return The frequency of the generic clock channel, in Hz.
+ */
+uint32_t system_gclk_chan_get_hz(
+		const uint8_t channel)
+{
+ 4f4:	b510      	push	{r4, lr}
+ 4f6:	0004      	movs	r4, r0
+	cpu_irq_enter_critical();
+ 4f8:	4b06      	ldr	r3, [pc, #24]	; (514 <system_gclk_chan_get_hz+0x20>)
+ 4fa:	4798      	blx	r3
+	uint8_t gen_id;
+
+	system_interrupt_enter_critical_section();
+	/* Select the requested generic clock channel */
+	gen_id = GCLK->PCHCTRL[channel].bit.GEN;
+ 4fc:	3420      	adds	r4, #32
+ 4fe:	00a4      	lsls	r4, r4, #2
+ 500:	4b05      	ldr	r3, [pc, #20]	; (518 <system_gclk_chan_get_hz+0x24>)
+ 502:	58e4      	ldr	r4, [r4, r3]
+ 504:	0724      	lsls	r4, r4, #28
+ 506:	0f24      	lsrs	r4, r4, #28
+	cpu_irq_leave_critical();
+ 508:	4b04      	ldr	r3, [pc, #16]	; (51c <system_gclk_chan_get_hz+0x28>)
+ 50a:	4798      	blx	r3
+	system_interrupt_leave_critical_section();
+
+	/* Return the clock speed of the associated GCLK generator */
+	return system_gclk_gen_get_hz(gen_id);
+ 50c:	0020      	movs	r0, r4
+ 50e:	4b04      	ldr	r3, [pc, #16]	; (520 <system_gclk_chan_get_hz+0x2c>)
+ 510:	4798      	blx	r3
+}
+ 512:	bd10      	pop	{r4, pc}
+ 514:	00000115 	.word	0x00000115
+ 518:	40001800 	.word	0x40001800
+ 51c:	00000155 	.word	0x00000155
+ 520:	00000489 	.word	0x00000489
+
+00000524 <_system_pinmux_config>:
+ */
+static void _system_pinmux_config(
+		PortGroup *const port,
+		const uint32_t pin_mask,
+		const struct system_pinmux_config *const config)
+{
+ 524:	b530      	push	{r4, r5, lr}
+
+	/* Track the configuration bits into a temporary variable before writing */
+	uint32_t pin_cfg = 0;
+
+	/* Enabled powersave mode, don't create configuration */
+	if (!config->powersave) {
+ 526:	78d3      	ldrb	r3, [r2, #3]
+ 528:	2b00      	cmp	r3, #0
+ 52a:	d135      	bne.n	598 <_system_pinmux_config+0x74>
+		/* Enable the pin peripheral MUX flag if non-GPIO selected (pinmux will
+		 * be written later) and store the new MUX mask */
+		if (config->mux_position != SYSTEM_PINMUX_GPIO) {
+ 52c:	7813      	ldrb	r3, [r2, #0]
+ 52e:	2b80      	cmp	r3, #128	; 0x80
+ 530:	d029      	beq.n	586 <_system_pinmux_config+0x62>
+			pin_cfg |= PORT_WRCONFIG_PMUXEN;
+			pin_cfg |= (config->mux_position << PORT_WRCONFIG_PMUX_Pos);
+ 532:	061b      	lsls	r3, r3, #24
+ 534:	2480      	movs	r4, #128	; 0x80
+ 536:	0264      	lsls	r4, r4, #9
+ 538:	4323      	orrs	r3, r4
+		}
+
+		/* Check if the user has requested that the input buffer be enabled */
+		if ((config->direction == SYSTEM_PINMUX_PIN_DIR_INPUT) ||
+ 53a:	7854      	ldrb	r4, [r2, #1]
+ 53c:	2502      	movs	r5, #2
+ 53e:	43ac      	bics	r4, r5
+ 540:	d106      	bne.n	550 <_system_pinmux_config+0x2c>
+				(config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT_WITH_READBACK)) {
+			/* Enable input buffer flag */
+			pin_cfg |= PORT_WRCONFIG_INEN;
+
+			/* Enable pull-up/pull-down control flag if requested */
+			if (config->input_pull != SYSTEM_PINMUX_PIN_PULL_NONE) {
+ 542:	7894      	ldrb	r4, [r2, #2]
+ 544:	2c00      	cmp	r4, #0
+ 546:	d120      	bne.n	58a <_system_pinmux_config+0x66>
+			pin_cfg |= PORT_WRCONFIG_INEN;
+ 548:	2480      	movs	r4, #128	; 0x80
+ 54a:	02a4      	lsls	r4, r4, #10
+ 54c:	4323      	orrs	r3, r4
+				pin_cfg |= PORT_WRCONFIG_PULLEN;
+			}
+
+			/* Clear the port DIR bits to disable the output buffer */
+			port->DIRCLR.reg = pin_mask;
+ 54e:	6041      	str	r1, [r0, #4]
+		}
+
+		/* Check if the user has requested that the output buffer be enabled */
+		if ((config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT) ||
+ 550:	7854      	ldrb	r4, [r2, #1]
+ 552:	3c01      	subs	r4, #1
+ 554:	2c01      	cmp	r4, #1
+ 556:	d91c      	bls.n	592 <_system_pinmux_config+0x6e>
+		port->DIRCLR.reg = pin_mask;
+	}
+
+	/* The Write Configuration register (WRCONFIG) requires the
+	 * pins to to grouped into two 16-bit half-words - split them out here */
+	uint32_t lower_pin_mask = (pin_mask & 0xFFFF);
+ 558:	040d      	lsls	r5, r1, #16
+ 55a:	0c2d      	lsrs	r5, r5, #16
+
+	/* Configure the lower 16-bits of the port to the desired configuration,
+	 * including the pin peripheral multiplexer just in case it is enabled */
+	port->WRCONFIG.reg
+		= (lower_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG;
+ 55c:	24a0      	movs	r4, #160	; 0xa0
+ 55e:	05e4      	lsls	r4, r4, #23
+ 560:	432c      	orrs	r4, r5
+ 562:	431c      	orrs	r4, r3
+		= (lower_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+ 564:	6284      	str	r4, [r0, #40]	; 0x28
+	uint32_t upper_pin_mask = (pin_mask >> 16);
+ 566:	0c0d      	lsrs	r5, r1, #16
+
+	/* Configure the upper 16-bits of the port to the desired configuration,
+	 * including the pin peripheral multiplexer just in case it is enabled */
+	port->WRCONFIG.reg
+		= (upper_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG |
+ 568:	24d0      	movs	r4, #208	; 0xd0
+ 56a:	0624      	lsls	r4, r4, #24
+ 56c:	432c      	orrs	r4, r5
+ 56e:	431c      	orrs	r4, r3
+		= (upper_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+ 570:	6284      	str	r4, [r0, #40]	; 0x28
+			PORT_WRCONFIG_HWSEL;
+
+	if(!config->powersave) {
+ 572:	78d4      	ldrb	r4, [r2, #3]
+ 574:	2c00      	cmp	r4, #0
+ 576:	d122      	bne.n	5be <_system_pinmux_config+0x9a>
+		/* Set the pull-up state once the port pins are configured if one was
+		 * requested and it does not violate the valid set of port
+		 * configurations */
+		if (pin_cfg & PORT_WRCONFIG_PULLEN) {
+ 578:	035b      	lsls	r3, r3, #13
+ 57a:	d51c      	bpl.n	5b6 <_system_pinmux_config+0x92>
+			/* Set the OUT register bits to enable the pull-up if requested,
+			 * clear to enable pull-down */
+			if (config->input_pull == SYSTEM_PINMUX_PIN_PULL_UP) {
+ 57c:	7893      	ldrb	r3, [r2, #2]
+ 57e:	2b01      	cmp	r3, #1
+ 580:	d01e      	beq.n	5c0 <_system_pinmux_config+0x9c>
+				port->OUTSET.reg = pin_mask;
+			} else {
+				port->OUTCLR.reg = pin_mask;
+ 582:	6141      	str	r1, [r0, #20]
+ 584:	e017      	b.n	5b6 <_system_pinmux_config+0x92>
+	uint32_t pin_cfg = 0;
+ 586:	2300      	movs	r3, #0
+ 588:	e7d7      	b.n	53a <_system_pinmux_config+0x16>
+				pin_cfg |= PORT_WRCONFIG_PULLEN;
+ 58a:	24c0      	movs	r4, #192	; 0xc0
+ 58c:	02e4      	lsls	r4, r4, #11
+ 58e:	4323      	orrs	r3, r4
+ 590:	e7dd      	b.n	54e <_system_pinmux_config+0x2a>
+			pin_cfg &= ~PORT_WRCONFIG_PULLEN;
+ 592:	4c0d      	ldr	r4, [pc, #52]	; (5c8 <_system_pinmux_config+0xa4>)
+ 594:	4023      	ands	r3, r4
+ 596:	e7df      	b.n	558 <_system_pinmux_config+0x34>
+		port->DIRCLR.reg = pin_mask;
+ 598:	6041      	str	r1, [r0, #4]
+	uint32_t lower_pin_mask = (pin_mask & 0xFFFF);
+ 59a:	040c      	lsls	r4, r1, #16
+ 59c:	0c24      	lsrs	r4, r4, #16
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG;
+ 59e:	23a0      	movs	r3, #160	; 0xa0
+ 5a0:	05db      	lsls	r3, r3, #23
+ 5a2:	4323      	orrs	r3, r4
+		= (lower_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+ 5a4:	6283      	str	r3, [r0, #40]	; 0x28
+	uint32_t upper_pin_mask = (pin_mask >> 16);
+ 5a6:	0c0c      	lsrs	r4, r1, #16
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG |
+ 5a8:	23d0      	movs	r3, #208	; 0xd0
+ 5aa:	061b      	lsls	r3, r3, #24
+ 5ac:	4323      	orrs	r3, r4
+		= (upper_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+ 5ae:	6283      	str	r3, [r0, #40]	; 0x28
+	if(!config->powersave) {
+ 5b0:	78d3      	ldrb	r3, [r2, #3]
+ 5b2:	2b00      	cmp	r3, #0
+ 5b4:	d103      	bne.n	5be <_system_pinmux_config+0x9a>
+			}
+		}
+
+		/* Check if the user has requested that the output buffer be enabled */
+		if ((config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT) ||
+ 5b6:	7853      	ldrb	r3, [r2, #1]
+ 5b8:	3b01      	subs	r3, #1
+ 5ba:	2b01      	cmp	r3, #1
+ 5bc:	d902      	bls.n	5c4 <_system_pinmux_config+0xa0>
+				(config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT_WITH_READBACK)) {
+			/* Set the port DIR bits to enable the output buffer */
+			port->DIRSET.reg = pin_mask;
+		}
+	}
+}
+ 5be:	bd30      	pop	{r4, r5, pc}
+				port->OUTSET.reg = pin_mask;
+ 5c0:	6181      	str	r1, [r0, #24]
+ 5c2:	e7f8      	b.n	5b6 <_system_pinmux_config+0x92>
+			port->DIRSET.reg = pin_mask;
+ 5c4:	6081      	str	r1, [r0, #8]
+}
+ 5c6:	e7fa      	b.n	5be <_system_pinmux_config+0x9a>
+ 5c8:	fffbffff 	.word	0xfffbffff
+
+000005cc <system_pinmux_pin_set_config>:
+ * \param[in] config    Configuration settings for the pin
+ */
+void system_pinmux_pin_set_config(
+		const uint8_t gpio_pin,
+		const struct system_pinmux_config *const config)
+{
+ 5cc:	b510      	push	{r4, lr}
+ 5ce:	000a      	movs	r2, r1
+	uint8_t group_index = (gpio_pin / 32);
+
+	/* Array of available ports */
+	Port *const ports[PORT_INST_NUM] = PORT_INSTS;
+
+	if (port_index < PORT_INST_NUM) {
+ 5d0:	09c1      	lsrs	r1, r0, #7
+		return &(ports[port_index]->Group[group_index]);
+	} else {
+		Assert(false);
+		return NULL;
+ 5d2:	2300      	movs	r3, #0
+	if (port_index < PORT_INST_NUM) {
+ 5d4:	2900      	cmp	r1, #0
+ 5d6:	d104      	bne.n	5e2 <system_pinmux_pin_set_config+0x16>
+		return &(ports[port_index]->Group[group_index]);
+ 5d8:	0943      	lsrs	r3, r0, #5
+ 5da:	01db      	lsls	r3, r3, #7
+ 5dc:	4905      	ldr	r1, [pc, #20]	; (5f4 <system_pinmux_pin_set_config+0x28>)
+ 5de:	468c      	mov	ip, r1
+ 5e0:	4463      	add	r3, ip
+	PortGroup *const port = system_pinmux_get_group_from_gpio_pin(gpio_pin);
+	uint32_t pin_mask = (1UL << (gpio_pin % 32));
+ 5e2:	241f      	movs	r4, #31
+ 5e4:	4020      	ands	r0, r4
+ 5e6:	2101      	movs	r1, #1
+ 5e8:	4081      	lsls	r1, r0
+
+	_system_pinmux_config(port, pin_mask, config);
+ 5ea:	0018      	movs	r0, r3
+ 5ec:	4b02      	ldr	r3, [pc, #8]	; (5f8 <system_pinmux_pin_set_config+0x2c>)
+ 5ee:	4798      	blx	r3
+}
+ 5f0:	bd10      	pop	{r4, pc}
+ 5f2:	46c0      	nop			; (mov r8, r8)
+ 5f4:	40002800 	.word	0x40002800
+ 5f8:	00000525 	.word	0x00000525
+
+000005fc <_system_dummy_init>:
+ */
+void _system_dummy_init(void);
+void _system_dummy_init(void)
+{
+	return;
+}
+ 5fc:	4770      	bx	lr
+	...
+
+00000600 <system_init>:
+ *  - Board hardware initialization (via the Board module)
+ *  - Event system driver initialization (via the EVSYS module)
+ *  - External Interrupt driver initialization (via the EXTINT module)
+ */
+void system_init(void)
+{
+ 600:	b510      	push	{r4, lr}
+	/* Configure GCLK and clock sources according to conf_clocks.h */
+	system_clock_init();
+ 602:	4b05      	ldr	r3, [pc, #20]	; (618 <system_init+0x18>)
+ 604:	4798      	blx	r3
+
+	/* Initialize board hardware */
+	system_board_init();
+ 606:	4b05      	ldr	r3, [pc, #20]	; (61c <system_init+0x1c>)
+ 608:	4798      	blx	r3
+
+	/* Initialize EVSYS hardware */
+	_system_events_init();
+ 60a:	4b05      	ldr	r3, [pc, #20]	; (620 <system_init+0x20>)
+ 60c:	4798      	blx	r3
+
+	/* Initialize External hardware */
+	_system_extint_init();
+ 60e:	4b05      	ldr	r3, [pc, #20]	; (624 <system_init+0x24>)
+ 610:	4798      	blx	r3
+	
+	/* Initialize DIVAS hardware */
+	_system_divas_init();
+ 612:	4b05      	ldr	r3, [pc, #20]	; (628 <system_init+0x28>)
+ 614:	4798      	blx	r3
+}
+ 616:	bd10      	pop	{r4, pc}
+ 618:	00000279 	.word	0x00000279
+ 61c:	00000185 	.word	0x00000185
+ 620:	000005fd 	.word	0x000005fd
+ 624:	000005fd 	.word	0x000005fd
+ 628:	000005fd 	.word	0x000005fd
+
+0000062c <Dummy_Handler>:
+
+/**
+ * \brief Default interrupt handler for unused IRQs.
+ */
+void Dummy_Handler(void)
+{
+ 62c:	e7fe      	b.n	62c <Dummy_Handler>
+	...
+
+00000630 <Reset_Handler>:
+{
+ 630:	b510      	push	{r4, lr}
+        if (pSrc != pDest) {
+ 632:	4a1a      	ldr	r2, [pc, #104]	; (69c <Reset_Handler+0x6c>)
+ 634:	4b1a      	ldr	r3, [pc, #104]	; (6a0 <Reset_Handler+0x70>)
+ 636:	429a      	cmp	r2, r3
+ 638:	d011      	beq.n	65e <Reset_Handler+0x2e>
+                for (; pDest < &_erelocate;) {
+ 63a:	001a      	movs	r2, r3
+ 63c:	4b19      	ldr	r3, [pc, #100]	; (6a4 <Reset_Handler+0x74>)
+ 63e:	429a      	cmp	r2, r3
+ 640:	d20d      	bcs.n	65e <Reset_Handler+0x2e>
+ 642:	4a19      	ldr	r2, [pc, #100]	; (6a8 <Reset_Handler+0x78>)
+ 644:	3303      	adds	r3, #3
+ 646:	1a9b      	subs	r3, r3, r2
+ 648:	089b      	lsrs	r3, r3, #2
+ 64a:	3301      	adds	r3, #1
+ 64c:	009b      	lsls	r3, r3, #2
+ 64e:	2200      	movs	r2, #0
+                        *pDest++ = *pSrc++;
+ 650:	4813      	ldr	r0, [pc, #76]	; (6a0 <Reset_Handler+0x70>)
+ 652:	4912      	ldr	r1, [pc, #72]	; (69c <Reset_Handler+0x6c>)
+ 654:	588c      	ldr	r4, [r1, r2]
+ 656:	5084      	str	r4, [r0, r2]
+ 658:	3204      	adds	r2, #4
+                for (; pDest < &_erelocate;) {
+ 65a:	429a      	cmp	r2, r3
+ 65c:	d1fa      	bne.n	654 <Reset_Handler+0x24>
+        for (pDest = &_szero; pDest < &_ezero;) {
+ 65e:	4a13      	ldr	r2, [pc, #76]	; (6ac <Reset_Handler+0x7c>)
+ 660:	4b13      	ldr	r3, [pc, #76]	; (6b0 <Reset_Handler+0x80>)
+ 662:	429a      	cmp	r2, r3
+ 664:	d20a      	bcs.n	67c <Reset_Handler+0x4c>
+ 666:	43d3      	mvns	r3, r2
+ 668:	4911      	ldr	r1, [pc, #68]	; (6b0 <Reset_Handler+0x80>)
+ 66a:	185b      	adds	r3, r3, r1
+ 66c:	2103      	movs	r1, #3
+ 66e:	438b      	bics	r3, r1
+ 670:	3304      	adds	r3, #4
+ 672:	189b      	adds	r3, r3, r2
+                *pDest++ = 0;
+ 674:	2100      	movs	r1, #0
+ 676:	c202      	stmia	r2!, {r1}
+        for (pDest = &_szero; pDest < &_ezero;) {
+ 678:	4293      	cmp	r3, r2
+ 67a:	d1fc      	bne.n	676 <Reset_Handler+0x46>
+        SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+ 67c:	4a0d      	ldr	r2, [pc, #52]	; (6b4 <Reset_Handler+0x84>)
+ 67e:	21ff      	movs	r1, #255	; 0xff
+ 680:	4b0d      	ldr	r3, [pc, #52]	; (6b8 <Reset_Handler+0x88>)
+ 682:	438b      	bics	r3, r1
+ 684:	6093      	str	r3, [r2, #8]
+        NVMCTRL->CTRLB.bit.MANW = 1;
+ 686:	4a0d      	ldr	r2, [pc, #52]	; (6bc <Reset_Handler+0x8c>)
+ 688:	6853      	ldr	r3, [r2, #4]
+ 68a:	397f      	subs	r1, #127	; 0x7f
+ 68c:	430b      	orrs	r3, r1
+ 68e:	6053      	str	r3, [r2, #4]
+        __libc_init_array();
+ 690:	4b0b      	ldr	r3, [pc, #44]	; (6c0 <Reset_Handler+0x90>)
+ 692:	4798      	blx	r3
+        main();
+ 694:	4b0b      	ldr	r3, [pc, #44]	; (6c4 <Reset_Handler+0x94>)
+ 696:	4798      	blx	r3
+ 698:	e7fe      	b.n	698 <Reset_Handler+0x68>
+ 69a:	46c0      	nop			; (mov r8, r8)
+ 69c:	000008e8 	.word	0x000008e8
+ 6a0:	20000000 	.word	0x20000000
+ 6a4:	20000004 	.word	0x20000004
+ 6a8:	20000004 	.word	0x20000004
+ 6ac:	20000004 	.word	0x20000004
+ 6b0:	20000040 	.word	0x20000040
+ 6b4:	e000ed00 	.word	0xe000ed00
+ 6b8:	00000000 	.word	0x00000000
+ 6bc:	41004000 	.word	0x41004000
+ 6c0:	0000085d 	.word	0x0000085d
+ 6c4:	000006d9 	.word	0x000006d9
+
+000006c8 <SysTick_Handler>:
+{
+	PortGroup *const port_base = port_get_group_from_gpio_pin(gpio_pin);
+	uint32_t pin_mask  = (1UL << (gpio_pin % 32));
+
+	/* Toggle pin output level */
+	port_base->OUTTGL.reg = pin_mask;
+ 6c8:	2280      	movs	r2, #128	; 0x80
+ 6ca:	00d2      	lsls	r2, r2, #3
+ 6cc:	4b01      	ldr	r3, [pc, #4]	; (6d4 <SysTick_Handler+0xc>)
+ 6ce:	61da      	str	r2, [r3, #28]
+ *        vector table.
+ */
+void SysTick_Handler(void)
+{
+	port_pin_toggle_output_level(LED_0_PIN);
+}
+ 6d0:	4770      	bx	lr
+ 6d2:	46c0      	nop			; (mov r8, r8)
+ 6d4:	40002880 	.word	0x40002880
+
+000006d8 <main>:
+	port_pin_set_config(LED_0_PIN, &pin_conf);
+	port_pin_set_output_level(LED_0_PIN, LED_0_INACTIVE);
+}
+
+int main(void)
+{
+ 6d8:	b500      	push	{lr}
+ 6da:	b083      	sub	sp, #12
+	system_init();
+ 6dc:	4b12      	ldr	r3, [pc, #72]	; (728 <main+0x50>)
+ 6de:	4798      	blx	r3
+
+	/*Configure system tick to generate periodic interrupts */
+	SysTick_Config(system_gclk_gen_get_hz(GCLK_GENERATOR_0)/8); //PB10
+ 6e0:	2000      	movs	r0, #0
+ 6e2:	4b12      	ldr	r3, [pc, #72]	; (72c <main+0x54>)
+ 6e4:	4798      	blx	r3
+ 6e6:	08c3      	lsrs	r3, r0, #3
+           function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.h</b>
+           must contain a vendor-specific implementation of this function.
+ */
+__STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+{
+  if ((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
+ 6e8:	3b01      	subs	r3, #1
+ 6ea:	4a11      	ldr	r2, [pc, #68]	; (730 <main+0x58>)
+ 6ec:	4293      	cmp	r3, r2
+ 6ee:	d80d      	bhi.n	70c <main+0x34>
+  {
+    return (1UL);                                                   /* Reload value impossible */
+  }
+
+  SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+ 6f0:	4a10      	ldr	r2, [pc, #64]	; (734 <main+0x5c>)
+ 6f2:	6053      	str	r3, [r2, #4]
+    SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))) |
+ 6f4:	4810      	ldr	r0, [pc, #64]	; (738 <main+0x60>)
+ 6f6:	6a03      	ldr	r3, [r0, #32]
+ 6f8:	021b      	lsls	r3, r3, #8
+ 6fa:	0a1b      	lsrs	r3, r3, #8
+ 6fc:	21c0      	movs	r1, #192	; 0xc0
+ 6fe:	0609      	lsls	r1, r1, #24
+ 700:	430b      	orrs	r3, r1
+ 702:	6203      	str	r3, [r0, #32]
+  NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+  SysTick->VAL   = 0UL;                                             /* Load the SysTick Counter Value */
+ 704:	2300      	movs	r3, #0
+ 706:	6093      	str	r3, [r2, #8]
+  SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+ 708:	3307      	adds	r3, #7
+ 70a:	6013      	str	r3, [r2, #0]
+	config->input_pull = PORT_PIN_PULL_UP;
+ 70c:	a901      	add	r1, sp, #4
+ 70e:	2301      	movs	r3, #1
+ 710:	704b      	strb	r3, [r1, #1]
+	config->powersave  = false;
+ 712:	2200      	movs	r2, #0
+ 714:	708a      	strb	r2, [r1, #2]
+	pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+ 716:	700b      	strb	r3, [r1, #0]
+	port_pin_set_config(LED_0_PIN, &pin_conf);
+ 718:	202a      	movs	r0, #42	; 0x2a
+ 71a:	4b08      	ldr	r3, [pc, #32]	; (73c <main+0x64>)
+ 71c:	4798      	blx	r3
+		port_base->OUTSET.reg = pin_mask;
+ 71e:	2280      	movs	r2, #128	; 0x80
+ 720:	00d2      	lsls	r2, r2, #3
+ 722:	4b07      	ldr	r3, [pc, #28]	; (740 <main+0x68>)
+ 724:	619a      	str	r2, [r3, #24]
+ 726:	e7fe      	b.n	726 <main+0x4e>
+ 728:	00000601 	.word	0x00000601
+ 72c:	00000489 	.word	0x00000489
+ 730:	00ffffff 	.word	0x00ffffff
+ 734:	e000e010 	.word	0xe000e010
+ 738:	e000ed00 	.word	0xe000ed00
+ 73c:	000001bd 	.word	0x000001bd
+ 740:	40002880 	.word	0x40002880
+
+00000744 <__udivsi3>:
+ 744:	2200      	movs	r2, #0
+ 746:	0843      	lsrs	r3, r0, #1
+ 748:	428b      	cmp	r3, r1
+ 74a:	d374      	bcc.n	836 <__udivsi3+0xf2>
+ 74c:	0903      	lsrs	r3, r0, #4
+ 74e:	428b      	cmp	r3, r1
+ 750:	d35f      	bcc.n	812 <__udivsi3+0xce>
+ 752:	0a03      	lsrs	r3, r0, #8
+ 754:	428b      	cmp	r3, r1
+ 756:	d344      	bcc.n	7e2 <__udivsi3+0x9e>
+ 758:	0b03      	lsrs	r3, r0, #12
+ 75a:	428b      	cmp	r3, r1
+ 75c:	d328      	bcc.n	7b0 <__udivsi3+0x6c>
+ 75e:	0c03      	lsrs	r3, r0, #16
+ 760:	428b      	cmp	r3, r1
+ 762:	d30d      	bcc.n	780 <__udivsi3+0x3c>
+ 764:	22ff      	movs	r2, #255	; 0xff
+ 766:	0209      	lsls	r1, r1, #8
+ 768:	ba12      	rev	r2, r2
+ 76a:	0c03      	lsrs	r3, r0, #16
+ 76c:	428b      	cmp	r3, r1
+ 76e:	d302      	bcc.n	776 <__udivsi3+0x32>
+ 770:	1212      	asrs	r2, r2, #8
+ 772:	0209      	lsls	r1, r1, #8
+ 774:	d065      	beq.n	842 <__udivsi3+0xfe>
+ 776:	0b03      	lsrs	r3, r0, #12
+ 778:	428b      	cmp	r3, r1
+ 77a:	d319      	bcc.n	7b0 <__udivsi3+0x6c>
+ 77c:	e000      	b.n	780 <__udivsi3+0x3c>
+ 77e:	0a09      	lsrs	r1, r1, #8
+ 780:	0bc3      	lsrs	r3, r0, #15
+ 782:	428b      	cmp	r3, r1
+ 784:	d301      	bcc.n	78a <__udivsi3+0x46>
+ 786:	03cb      	lsls	r3, r1, #15
+ 788:	1ac0      	subs	r0, r0, r3
+ 78a:	4152      	adcs	r2, r2
+ 78c:	0b83      	lsrs	r3, r0, #14
+ 78e:	428b      	cmp	r3, r1
+ 790:	d301      	bcc.n	796 <__udivsi3+0x52>
+ 792:	038b      	lsls	r3, r1, #14
+ 794:	1ac0      	subs	r0, r0, r3
+ 796:	4152      	adcs	r2, r2
+ 798:	0b43      	lsrs	r3, r0, #13
+ 79a:	428b      	cmp	r3, r1
+ 79c:	d301      	bcc.n	7a2 <__udivsi3+0x5e>
+ 79e:	034b      	lsls	r3, r1, #13
+ 7a0:	1ac0      	subs	r0, r0, r3
+ 7a2:	4152      	adcs	r2, r2
+ 7a4:	0b03      	lsrs	r3, r0, #12
+ 7a6:	428b      	cmp	r3, r1
+ 7a8:	d301      	bcc.n	7ae <__udivsi3+0x6a>
+ 7aa:	030b      	lsls	r3, r1, #12
+ 7ac:	1ac0      	subs	r0, r0, r3
+ 7ae:	4152      	adcs	r2, r2
+ 7b0:	0ac3      	lsrs	r3, r0, #11
+ 7b2:	428b      	cmp	r3, r1
+ 7b4:	d301      	bcc.n	7ba <__udivsi3+0x76>
+ 7b6:	02cb      	lsls	r3, r1, #11
+ 7b8:	1ac0      	subs	r0, r0, r3
+ 7ba:	4152      	adcs	r2, r2
+ 7bc:	0a83      	lsrs	r3, r0, #10
+ 7be:	428b      	cmp	r3, r1
+ 7c0:	d301      	bcc.n	7c6 <__udivsi3+0x82>
+ 7c2:	028b      	lsls	r3, r1, #10
+ 7c4:	1ac0      	subs	r0, r0, r3
+ 7c6:	4152      	adcs	r2, r2
+ 7c8:	0a43      	lsrs	r3, r0, #9
+ 7ca:	428b      	cmp	r3, r1
+ 7cc:	d301      	bcc.n	7d2 <__udivsi3+0x8e>
+ 7ce:	024b      	lsls	r3, r1, #9
+ 7d0:	1ac0      	subs	r0, r0, r3
+ 7d2:	4152      	adcs	r2, r2
+ 7d4:	0a03      	lsrs	r3, r0, #8
+ 7d6:	428b      	cmp	r3, r1
+ 7d8:	d301      	bcc.n	7de <__udivsi3+0x9a>
+ 7da:	020b      	lsls	r3, r1, #8
+ 7dc:	1ac0      	subs	r0, r0, r3
+ 7de:	4152      	adcs	r2, r2
+ 7e0:	d2cd      	bcs.n	77e <__udivsi3+0x3a>
+ 7e2:	09c3      	lsrs	r3, r0, #7
+ 7e4:	428b      	cmp	r3, r1
+ 7e6:	d301      	bcc.n	7ec <__udivsi3+0xa8>
+ 7e8:	01cb      	lsls	r3, r1, #7
+ 7ea:	1ac0      	subs	r0, r0, r3
+ 7ec:	4152      	adcs	r2, r2
+ 7ee:	0983      	lsrs	r3, r0, #6
+ 7f0:	428b      	cmp	r3, r1
+ 7f2:	d301      	bcc.n	7f8 <__udivsi3+0xb4>
+ 7f4:	018b      	lsls	r3, r1, #6
+ 7f6:	1ac0      	subs	r0, r0, r3
+ 7f8:	4152      	adcs	r2, r2
+ 7fa:	0943      	lsrs	r3, r0, #5
+ 7fc:	428b      	cmp	r3, r1
+ 7fe:	d301      	bcc.n	804 <__udivsi3+0xc0>
+ 800:	014b      	lsls	r3, r1, #5
+ 802:	1ac0      	subs	r0, r0, r3
+ 804:	4152      	adcs	r2, r2
+ 806:	0903      	lsrs	r3, r0, #4
+ 808:	428b      	cmp	r3, r1
+ 80a:	d301      	bcc.n	810 <__udivsi3+0xcc>
+ 80c:	010b      	lsls	r3, r1, #4
+ 80e:	1ac0      	subs	r0, r0, r3
+ 810:	4152      	adcs	r2, r2
+ 812:	08c3      	lsrs	r3, r0, #3
+ 814:	428b      	cmp	r3, r1
+ 816:	d301      	bcc.n	81c <__udivsi3+0xd8>
+ 818:	00cb      	lsls	r3, r1, #3
+ 81a:	1ac0      	subs	r0, r0, r3
+ 81c:	4152      	adcs	r2, r2
+ 81e:	0883      	lsrs	r3, r0, #2
+ 820:	428b      	cmp	r3, r1
+ 822:	d301      	bcc.n	828 <__udivsi3+0xe4>
+ 824:	008b      	lsls	r3, r1, #2
+ 826:	1ac0      	subs	r0, r0, r3
+ 828:	4152      	adcs	r2, r2
+ 82a:	0843      	lsrs	r3, r0, #1
+ 82c:	428b      	cmp	r3, r1
+ 82e:	d301      	bcc.n	834 <__udivsi3+0xf0>
+ 830:	004b      	lsls	r3, r1, #1
+ 832:	1ac0      	subs	r0, r0, r3
+ 834:	4152      	adcs	r2, r2
+ 836:	1a41      	subs	r1, r0, r1
+ 838:	d200      	bcs.n	83c <__udivsi3+0xf8>
+ 83a:	4601      	mov	r1, r0
+ 83c:	4152      	adcs	r2, r2
+ 83e:	4610      	mov	r0, r2
+ 840:	4770      	bx	lr
+ 842:	e7ff      	b.n	844 <__udivsi3+0x100>
+ 844:	b501      	push	{r0, lr}
+ 846:	2000      	movs	r0, #0
+ 848:	f000 f806 	bl	858 <__aeabi_idiv0>
+ 84c:	bd02      	pop	{r1, pc}
+ 84e:	46c0      	nop			; (mov r8, r8)
+
+00000850 <__aeabi_uidivmod>:
+ 850:	2900      	cmp	r1, #0
+ 852:	d0f7      	beq.n	844 <__udivsi3+0x100>
+ 854:	e776      	b.n	744 <__udivsi3>
+ 856:	4770      	bx	lr
+
+00000858 <__aeabi_idiv0>:
+ 858:	4770      	bx	lr
+ 85a:	46c0      	nop			; (mov r8, r8)
+
+0000085c <__libc_init_array>:
+ 85c:	b570      	push	{r4, r5, r6, lr}
+ 85e:	2600      	movs	r6, #0
+ 860:	4d0c      	ldr	r5, [pc, #48]	; (894 <__libc_init_array+0x38>)
+ 862:	4c0d      	ldr	r4, [pc, #52]	; (898 <__libc_init_array+0x3c>)
+ 864:	1b64      	subs	r4, r4, r5
+ 866:	10a4      	asrs	r4, r4, #2
+ 868:	42a6      	cmp	r6, r4
+ 86a:	d109      	bne.n	880 <__libc_init_array+0x24>
+ 86c:	2600      	movs	r6, #0
+ 86e:	f000 f82b 	bl	8c8 <_init>
+ 872:	4d0a      	ldr	r5, [pc, #40]	; (89c <__libc_init_array+0x40>)
+ 874:	4c0a      	ldr	r4, [pc, #40]	; (8a0 <__libc_init_array+0x44>)
+ 876:	1b64      	subs	r4, r4, r5
+ 878:	10a4      	asrs	r4, r4, #2
+ 87a:	42a6      	cmp	r6, r4
+ 87c:	d105      	bne.n	88a <__libc_init_array+0x2e>
+ 87e:	bd70      	pop	{r4, r5, r6, pc}
+ 880:	00b3      	lsls	r3, r6, #2
+ 882:	58eb      	ldr	r3, [r5, r3]
+ 884:	4798      	blx	r3
+ 886:	3601      	adds	r6, #1
+ 888:	e7ee      	b.n	868 <__libc_init_array+0xc>
+ 88a:	00b3      	lsls	r3, r6, #2
+ 88c:	58eb      	ldr	r3, [r5, r3]
+ 88e:	4798      	blx	r3
+ 890:	3601      	adds	r6, #1
+ 892:	e7f2      	b.n	87a <__libc_init_array+0x1e>
+ 894:	000008d4 	.word	0x000008d4
+ 898:	000008d4 	.word	0x000008d4
+ 89c:	000008d4 	.word	0x000008d4
+ 8a0:	000008d8 	.word	0x000008d8
+ 8a4:	000001f2 	.word	0x000001f2
+ 8a8:	000001ee 	.word	0x000001ee
+ 8ac:	000001ee 	.word	0x000001ee
+ 8b0:	00000258 	.word	0x00000258
+ 8b4:	00000258 	.word	0x00000258
+ 8b8:	00000208 	.word	0x00000208
+ 8bc:	000001f8 	.word	0x000001f8
+ 8c0:	0000020e 	.word	0x0000020e
+ 8c4:	00000246 	.word	0x00000246
+
+000008c8 <_init>:
+ 8c8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8ca:	46c0      	nop			; (mov r8, r8)
+ 8cc:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8ce:	bc08      	pop	{r3}
+ 8d0:	469e      	mov	lr, r3
+ 8d2:	4770      	bx	lr
+
+000008d4 <__init_array_start>:
+ 8d4:	000000dd 	.word	0x000000dd
+
+000008d8 <_fini>:
+ 8d8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8da:	46c0      	nop			; (mov r8, r8)
+ 8dc:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8de:	bc08      	pop	{r3}
+ 8e0:	469e      	mov	lr, r3
+ 8e2:	4770      	bx	lr
+
+000008e4 <__fini_array_start>:
+ 8e4:	000000b5 	.word	0x000000b5
