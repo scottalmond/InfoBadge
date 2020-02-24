@@ -77,10 +77,12 @@
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>
  */
 
+//115200 baud
+
 #include "asf.h"
 #include "stdio_serial.h"
 #include "conf_uart_serial.h"
-
+#include "custom/gui.h"
 
 #define STRING_EOL    "\r"
 #define STRING_HEADER "-- Getting Started Example --\r\n" \
@@ -218,26 +220,27 @@ int main(void)
 	configure_console();
 
 	/*Configures the External Interrupt*/
-	configure_extint();
+//	configure_extint();
 
 	/*Configures the External Interrupt callback*/
-	configure_eic_callback();
+//	configure_eic_callback();
 
 	/*Configures  TC driver*/
-	configure_tc();
+//	configure_tc();
 
 	/*Configures TC callback*/
-	configure_tc_callbacks();
+//	configure_tc_callbacks();
 
 	/*Initialize the delay driver*/
 	delay_init();
 
+	//debug_loop();
 
 	/* Output example information */
-	puts(STRING_HEADER);
+	//puts(STRING_HEADER);
 
 	/*Enable system interrupt*/
-	system_interrupt_enable_global();
+//	system_interrupt_enable_global();
 
 
     /*Configures PORT for LED0*/
@@ -260,7 +263,13 @@ int main(void)
 	port_pin_set_output_level(LED0_PIN, LED0_INACTIVE);
 
 	/*main loop*/
-	while(1);
+	printf("\r\n");
+	print_home();
+	while(1)
+	{
+		//debug_loop();
+		prompt_menu();
+	}
 }
 
 #ifdef __cplusplus

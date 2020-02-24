@@ -39,6 +39,33 @@ The output is triggered by TC counter
 CONF_STDIO_BAUDRATE is 38400
 keywords: configure_console, usart_get_config_defaults, stdio_serial_init, usart_enable
 
+I want to merge "Atmel Start" project with the demo so that I can control PB06 as a debug output.  Having two projects in the same "solution" has poorly explained conflicts (will only compile the second project while igrnoing the first)
+
+trying to add a helper file/function generates build errors
+
+Remidned of Apollo 13 "Let's look at this as a question of status: What do we have that wroks?"
+
+there appear to be mixed generation os libraries between "Getting started" and the "Atmel Start" projects - specifically in port_set_gpio... and gpio_set_digital... naming/usage conventions
+
+HOW TO MERGE libraries between projects?  Want to use the UART/USB described in the "Getting started" project with the KNOWN TO WORK PB06 toggling from "Atmel Start"
+
+Have to read between the lines to determine that a .h file is needed (error messages are useless for help)
+
+like trying to combine two south magnets, IDE fights me every step of the way...
+
+usart_serial_getchar
+usart.c
+	SercomUsart *const usart_hw = &(module->hw->USART);
+
+	/* Check if USART has new data */
+	if (!(usart_hw->INTFLAG.reg & SERCOM_USART_INTFLAG_RXC)) {
+		/* Return error code */
+		return STATUS_BUSY;
+	}
+serial.h
+
+
+
 
 
 

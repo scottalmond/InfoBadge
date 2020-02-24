@@ -617,6 +617,9 @@
     <Folder Include="src\custom" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\custom\gui.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\custom\gui.c">
       <SubType>compile</SubType>
     </Compile>

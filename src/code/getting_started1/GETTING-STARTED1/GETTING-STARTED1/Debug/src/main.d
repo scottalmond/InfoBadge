@@ -152,7 +152,8 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/sam0/drivers/tc/tc.h \
  ../src/ASF/sam0/drivers/tc/tc_interrupt.h \
  ../src/ASF/sam0/drivers/tc/tc.h \
- ../src/ASF/sam0/applications/getting-started/saml21j18b_saml21_xplained_pro/conf_uart_serial.h
+ ../src/ASF/sam0/applications/getting-started/saml21j18b_saml21_xplained_pro/conf_uart_serial.h \
+ ../src/custom/gui.h
 
 ../src/asf.h:
 
@@ -467,3 +468,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../src/ASF/sam0/drivers/tc/tc.h:
 
 ../src/ASF/sam0/applications/getting-started/saml21j18b_saml21_xplained_pro/conf_uart_serial.h:
+
+../src/custom/gui.h:
