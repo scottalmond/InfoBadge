@@ -1650,4 +1650,6 @@ Wire Wire Line
 	8350 5750 8550 5750
 Text Notes 7850 5650 0    50   ~ 0
 >330 ohms
+Text Notes 5850 2050 0    50   ~ 0
+Possible alt:\nLIS2DH12TR\nhigher current draw\nhalf price
 $EndSCHEMATC

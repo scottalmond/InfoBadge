@@ -64,8 +64,37 @@ usart.c
 	}
 serial.h
 
+Also have been unable to get demo program to run on capacitive touch
 
+usb boot loader: http://ww1.microchip.com/downloads/en/AppNotes/Atmel-42650-SAM-BA-Bootloader-for-SAM-L-Devices_ApplicationNote_AT10840.pdf
+ice in production: http://ww1.microchip.com/downloads/en/AppNotes/00002466A.pdf
+  https://www.highvoltagecoils.eu/2017/09/12/how-to-use-atmels-atprogram-cli-command-line-interface-to-program-a-production-file-into-an-xmega/
 
+the atmel toolchain *requires* internet acces to make a 'Start' project
 
+"low power" sercom?
+ SERCOM5, due to its location in PD0, has a reduced feature set and does not support these features
+- spi chip select
+TC4 for wake-from-sleep
 
+import arduino library I2C
+C:\Users\Logic\Documents\ArduinoData\packages\arduino\hardware\samd\1.8.4\libraries\Wire
 
+View Example Help > Offline Help
+is not selectable
+
+ASF explorer/wizard
+can this work offline?
+
+New example file frokm ASF or Extensions requires internet access
+
+So atmel studio has a built-in browser but no terminal to communicate with chips?
+
+12 Mhz on PL0 for CPU, 1.2 mA LDO / 0.7 mA on BUCK [Coremark]
+
+--
+
+50 N at 100m depth for 7.62mm dimamter
+
+add BME280 for no particular reason
+https://www.kickstarter.com/projects/463050344/ruuvitag-open-source-bluetooth-sensor-beacon
